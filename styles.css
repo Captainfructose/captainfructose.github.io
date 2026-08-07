@@ -1877,3 +1877,86 @@ footer {
   .hero-badges { gap: 0.35rem; }
   .hero-badge  { font-size: 0.65rem; padding: 0.25rem 0.5rem; }
 }
+
+/* ════════════════════════════════════════════════════════
+   COMING SOON STATE — car.html placeholder for unbuilt entries
+   ════════════════════════════════════════════════════════ */
+
+/* ─── BODY WRAPPER ──────────────────────────────────────
+   Centered card below the hero, matching the site's dark feel
+──────────────────────────────────────────────────────── */
+.coming-soon-body {
+  max-width: 680px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.coming-soon-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ─── ANIMATED CLOCK ICON ───────────────────────────────
+   Pulses orange to signal "in progress"
+──────────────────────────────────────────────────────── */
+.cs-icon {
+  color: var(--orange);
+  animation: cs-pulse 2s ease-in-out infinite;
+}
+@keyframes cs-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.5; transform: scale(0.95); }
+}
+
+.cs-heading {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+
+.cs-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ─── ACTION BUTTONS ────────────────────────────────────
+   Browse button + subtle home link
+──────────────────────────────────────────────────────── */
+.cs-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cs-link {
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cs-link:hover { color: var(--white); }
+
+/* ─── MOBILE ────────────────────────────────────────────
+   Tighten up the coming soon card on small screens
+──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .coming-soon-body  { margin: 2.5rem auto; }
+  .coming-soon-card  { padding: 2rem 1.25rem; }
+  .cs-heading        { font-size: 1.8rem; }
+}

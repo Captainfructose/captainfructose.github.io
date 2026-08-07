@@ -1,0 +1,178 @@
+{
+  "id": "mustanggt",
+  "make": "Ford",
+  "model": "Mustang GT",
+  "abbr": "GT",
+  "years": "2018–2023",
+  "era": "2010s",
+  "category": "muscle",
+  "drivetrain": "RWD",
+  "engine": "5.0L V8",
+  "hp": 460,
+  "torque": 420,
+  "zero_to_sixty": "4.3",
+  "base_price": "$36,120",
+  "units_produced": "N/A",
+
+  "images": {
+    "thumb":   "Images/mustanggt/thumb.jpg",
+    "hero":    "Images/mustanggt/hero.jpg",
+    "gallery": [
+      "Images/mustanggt/gallery1.jpg",
+      "Images/mustanggt/gallery2.jpg",
+      "Images/mustanggt/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Ford · American Muscle · 2018–2023",
+    "title": "MUSTANG\nGT",
+    "subtitle": "2018–2023 Production",
+    "image_text": "GT",
+    "badges": [
+      { "label": "460 HP",         "highlight": true  },
+      { "label": "420 lb-ft",      "highlight": true  },
+      { "label": "5.0L Coyote V8", "highlight": false },
+      { "label": "6-Speed Manual", "highlight": false },
+      { "label": "RWD",            "highlight": false },
+      { "label": "Active Exhaust", "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",     "href": "index.html"          },
+    { "label": "Browse",   "href": "browse.html"         },
+    { "label": "Ford",     "href": "browse.html?make=ford" },
+    { "label": "Mustang",  "href": "browse.html?q=mustang" },
+    { "label": "GT",       "href": null }
+  ],
+
+  "history": [
+    "The <strong>Ford Mustang GT</strong> is the heartbeat of America's most iconic pony car lineup. The S550 generation, introduced for 2015 and significantly updated for 2018, brought the Mustang into the modern performance era while preserving everything enthusiasts love about the nameplate — a thundering V8, rear-wheel drive, and unmistakable styling.",
+    "The 2018 refresh brought a significant upgrade to the <strong>5.0-liter Coyote V8</strong>, now producing 460 horsepower thanks to revised cylinder heads, a new intake manifold, and port fuel injection added alongside the existing direct injection system. The result was a broader powerband, more torque across the rev range, and an even more aggressive exhaust note.",
+    "Ford also introduced the <strong>MagneRide active suspension</strong> as an option on the GT for 2018, dramatically improving the car's handling composure without sacrificing ride quality. The available Performance Package added wider Michelin Pilot Sport 4S tires, a Torsen limited-slip differential, and larger Brembo brakes — transforming the GT into a genuine track weapon.",
+    "The S550 Mustang GT represented a high point for the nameplate, offering supercar-embarrassing performance at an attainable price. Production of this generation wrapped in 2023, making way for the all-new S650 Mustang — but the S550 GT remains one of the best performance values in automotive history."
+  ],
+
+  "timeline": [
+    { "dot": "SN95", "label": "SN95 Era",    "year": "1994–2004", "active": false },
+    { "dot": "S197", "label": "S197 Era",    "year": "2005–2014", "active": false },
+    { "dot": "S550", "label": "S550 Launch", "year": "2015–2017", "active": false },
+    { "dot": "REF",  "label": "Refresh",     "year": "2018",      "active": true  },
+    { "dot": "END",  "label": "Final Year",  "year": "2023",      "active": false }
+  ],
+
+  "did_you_know": "The S550 Mustang GT was the <strong>first Mustang ever sold new in right-hand drive</strong>, opening up markets in the UK, Australia, and Japan. Ford even offered a factory RHD conversion, marking a historic shift for a car that had always been strictly American.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine",        "value": "5.0L Ti-VCT DOHC V8 (Coyote Gen 3)", "highlight": true  },
+        { "label": "Displacement",  "value": "5,038 cc",                             "highlight": false },
+        { "label": "Horsepower",    "value": "460 hp @ 7,000 rpm",                  "highlight": true  },
+        { "label": "Torque",        "value": "420 lb-ft @ 4,600 rpm",               "highlight": true  },
+        { "label": "Compression",   "value": "12.0:1",                               "highlight": false },
+        { "label": "Fuel System",   "value": "Direct + Port Injection (dual)",       "highlight": false },
+        { "label": "Transmission",  "value": "6-speed manual or 10-speed auto",      "highlight": false },
+        { "label": "Drivetrain",    "value": "Rear-Wheel Drive (RWD)",              "highlight": false },
+        { "label": "Differential",  "value": "Torsen LSD (w/ Performance Pack)",    "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "4.3 seconds",        "highlight": true  },
+        { "label": "Quarter Mile",        "value": "12.7 sec @ 114 mph", "highlight": false },
+        { "label": "Top Speed",           "value": "155 mph (limited)",  "highlight": false },
+        { "label": "Lateral G",           "value": "1.01g",              "highlight": false },
+        { "label": "Braking (60–0)",      "value": "99 ft",              "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "15 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "24 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "18 mpg",             "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "3,836 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "107.1 in",  "highlight": false },
+        { "label": "Length",      "value": "188.5 in",  "highlight": false },
+        { "label": "Width",       "value": "75.4 in",   "highlight": false },
+        { "label": "Height",      "value": "54.5 in",   "highlight": false },
+        { "label": "Front Track", "value": "63.7 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "63.9 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Mustang GT",
+      "years": "2018–2023",
+      "description": "The base GT with the 460hp Coyote V8, choice of 6-speed manual or 10-speed automatic, and Ford's Active Valve Performance Exhaust as a standalone option."
+    },
+    {
+      "name": "GT Performance Pack",
+      "years": "2018–2023",
+      "description": "Adds Michelin Pilot Sport 4S tires, Torsen LSD, larger Brembo brakes, stiffer springs, and a strut tower brace. The sweet spot of the GT lineup."
+    },
+    {
+      "name": "GT Performance Pack 2",
+      "years": "2018–2020",
+      "description": "Track-focused upgrade over PP1 adding MagneRide dampers, wider rear track, 19-inch wheels, and an additional rear spoiler for increased downforce."
+    },
+    {
+      "name": "GT California Special",
+      "years": "2019–2023",
+      "description": "Appearance package inspired by the 1968 GT/CS, featuring unique badging, stripe delete options, and exclusive interior trim — a styling rather than performance upgrade."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Mustang Bullitt",
+      "description": "A tribute to the legendary 1968 Highland Green movie car. Tuned to 480 hp with an open air intake, revised calibration, and a Torsen diff. Available only in Dark Highland Green or Shadow Black — a modern classic."
+    },
+    {
+      "name": "Mustang Mach 1",
+      "description": "Reborn for 2021, the Mach 1 bridged the gap between the GT and Shelby GT500. Using the GT350's Voodoo intake and oil cooler on the Coyote block, it produced 480 hp and came standard with a Tremec 6-speed from the GT500."
+    },
+    {
+      "name": "Shelby GT350",
+      "description": "While technically a separate model, the GT350's flat-plane crank 5.2L Voodoo V8 producing 526 hp represented the ultimate naturally aspirated expression of the S550 platform — a spiritual sibling to the GT."
+    }
+  ],
+
+  "colors": [
+    { "name": "Race Red",          "hex": "#c0272d" },
+    { "name": "Oxford White",      "hex": "#e8e6e0" },
+    { "name": "Shadow Black",      "hex": "#1c1c1e" },
+    { "name": "Velocity Blue",     "hex": "#1a4f8a" },
+    { "name": "Need for Green",    "hex": "#3a6b30" },
+    { "name": "Grabber Lime",      "hex": "#8ab832" },
+    { "name": "Twister Orange",    "hex": "#d4621a" },
+    { "name": "Iconic Silver",     "hex": "#9aa0a6" }
+  ],
+
+  "quick_ref": [
+    { "label": "Make",           "value": "Ford",             "highlight": false },
+    { "label": "Model",          "value": "Mustang GT",       "highlight": false },
+    { "label": "Years",          "value": "2018–2023",        "highlight": false },
+    { "label": "Horsepower",     "value": "460 hp",           "highlight": true  },
+    { "label": "Torque",         "value": "420 lb-ft",        "highlight": true  },
+    { "label": "Engine",         "value": "5.0L Coyote V8",  "highlight": false },
+    { "label": "Transmission",   "value": "6-Speed Manual",   "highlight": false },
+    { "label": "Drive",          "value": "RWD",              "highlight": false },
+    { "label": "0–60 mph",       "value": "4.3 sec",          "highlight": true  },
+    { "label": "Base Price",     "value": "$36,120",          "highlight": false },
+    { "label": "Units Produced", "value": "N/A",              "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Ford",       "model": "Shelby GT500",   "id": "gt500"     },
+    { "make": "Chevrolet",  "model": "Camaro SS",      "id": "camaross"  },
+    { "make": "Dodge",      "model": "Challenger R/T", "id": "challenger"},
+    { "make": "Ford",       "model": "Mustang Mach 1", "id": "mach1"     }
+  ]
+}

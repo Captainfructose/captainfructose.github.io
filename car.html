@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Title is set dynamically by JS once the JSON loads -->
+  <!-- Title and meta tags are updated dynamically by JS once the car JSON loads -->
   <title>Garage Atlas</title>
+
+  <!-- ─── SEO — updated by JS after JSON loads ─────────── -->
+  <meta name="description" content="Car specs, history, trims, variants, and factory colors — Garage Atlas">
+  <meta name="author"      content="Garage Atlas">
+  <link rel="canonical"    href="https://www.garageatlas.org/car.html" id="meta-canonical">
+
+  <!-- ─── OPEN GRAPH — updated by JS after JSON loads ─────
+       IDs allow JS to swap in the car-specific values
+  ──────────────────────────────────────────────────────── -->
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://www.garageatlas.org/car.html"          id="meta-og-url">
+  <meta property="og:title"       content="Garage Atlas"                                    id="meta-og-title">
+  <meta property="og:description" content="Car specs, history, trims, and more."           id="meta-og-desc">
+  <meta property="og:image"       content="https://www.garageatlas.org/Images/og-cover.jpg" id="meta-og-image">
+  <meta property="og:site_name"   content="Garage Atlas">
+
+  <!-- ─── TWITTER CARD — updated by JS after JSON loads ─── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Garage Atlas"                                    id="meta-tw-title">
+  <meta name="twitter:description" content="Car specs, history, trims, and more."           id="meta-tw-desc">
+  <meta name="twitter:image"       content="https://www.garageatlas.org/Images/og-cover.jpg" id="meta-tw-image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -172,8 +193,53 @@
   <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
 
+<!-- ─── COMING SOON STATE ────────────────────────────
+     Shown when a car exists in the index but has no JSON
+     file yet — i.e. the fetch returns a 404.
+─────────────────────────────────────────────────────── -->
+<div id="coming-soon-state" style="display:none;">
+
+  <!-- Reuse the car-hero layout so it feels like a real page -->
+  <div class="car-hero">
+    <div class="car-hero-info">
+      <p class="car-hero-eyebrow" id="cs-eyebrow">Garage Atlas</p>
+      <h1 class="car-hero-title" id="cs-title">COMING<br><span style="color:var(--orange)">SOON</span></h1>
+      <p class="car-hero-sub">Entry In Progress</p>
+      <div class="hero-badges">
+        <span class="hero-badge highlight">Under Construction</span>
+      </div>
+    </div>
+    <div class="car-hero-img" id="cs-img">?</div>
+  </div>
+
+  <!-- Placeholder content body -->
+  <div class="coming-soon-body">
+    <div class="coming-soon-card">
+      <!-- Animated orange pulse icon -->
+      <div class="cs-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h2 class="cs-heading">This Entry Is Being Built</h2>
+      <p class="cs-text">
+        We're gathering specs, history, and photos for this car.
+        Check back soon — or help us out by contributing data.
+      </p>
+      <div class="cs-actions">
+        <a href="browse.html" class="btn-orange">
+          ← Browse All Cars
+        </a>
+        <a href="index.html" class="cs-link">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ─── ERROR STATE ──────────────────────────────────
-     Shown if the car ID is missing or the JSON fetch fails
+     Shown only if the car ID is completely missing from
+     the URL — not just a missing JSON file.
 ─────────────────────────────────────────────────────── -->
 <div id="error-state" style="display:none; text-align:center; padding:8rem 2rem;">
   <div style="font-size:3rem; margin-bottom:1rem;">🔍</div>
@@ -200,17 +266,33 @@ const carId  = params.get('id');
 
 // ─── 2. FETCH JSON & KICK OFF RENDER ────────────────────
 if (!carId) {
+  // No ID in the URL at all — show the generic error
   showError();
 } else {
   fetch(`cars/${carId}.json`)
     .then(res => {
-      // A 404 or other HTTP error still resolves the promise,
-      // so we manually throw if the response isn't OK
+      // 404 means the car is in the index but has no JSON yet — coming soon
+      if (res.status === 404) throw new Error('coming-soon');
+      // Any other HTTP error is a real problem
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })
     .then(car => renderAll(car))
-    .catch(() => showError());
+    .catch(err => {
+      // Distinguish between a missing JSON file and a real error
+      if (err.message === 'coming-soon') {
+        // Try to get the car's basic info from index.json to populate the coming soon page
+        fetch('cars/index.json')
+          .then(r => r.json())
+          .then(index => {
+            const car = index.find(c => c.id === carId);
+            showComingSoon(car || null);
+          })
+          .catch(() => showComingSoon(null));
+      } else {
+        showError();
+      }
+    });
 }
 
 // ─── RENDER ALL SECTIONS ────────────────────────────────
@@ -219,6 +301,7 @@ function renderAll(car) {
   // Update browser tab title
   document.title = `${car.years} ${car.make} ${car.model} — Garage Atlas`;
 
+  updateMeta(car);                          // SEO + Open Graph tags
   renderBreadcrumb(car.breadcrumb);
   renderHero(car.hero, car.images);       // images passed for hero photo
   renderHistory(car.history);
@@ -240,6 +323,36 @@ function renderAll(car) {
 
   // Wire up nav search and page transition links
   initNav();
+}
+
+// ─── UPDATE META TAGS ────────────────────────────────────
+// Swaps in car-specific values for all SEO and social sharing
+// tags once the JSON has loaded. Uses element IDs set in <head>.
+function updateMeta(car) {
+  const url   = `https://www.garageatlas.org/car.html?id=${car.id}`;
+  const title = `${car.years} ${car.make} ${car.model} — Garage Atlas`;
+  const desc  = `${car.make} ${car.model} (${car.years}) — ${car.hp}hp ${car.engine} ${car.drivetrain}. Full specs, history, trims, variants, and factory colors on Garage Atlas.`;
+
+  // Use the car's hero image for social sharing if available,
+  // otherwise fall back to the site-wide OG cover image
+  const image = (car.images && car.images.hero)
+    ? `https://www.garageatlas.org/${car.images.hero}`
+    : 'https://www.garageatlas.org/Images/og-cover.jpg';
+
+  // Basic SEO
+  document.querySelector('meta[name="description"]').setAttribute('content', desc);
+  document.getElementById('meta-canonical').setAttribute('href', url);
+
+  // Open Graph
+  document.getElementById('meta-og-url').setAttribute('content', url);
+  document.getElementById('meta-og-title').setAttribute('content', title);
+  document.getElementById('meta-og-desc').setAttribute('content', desc);
+  document.getElementById('meta-og-image').setAttribute('content', image);
+
+  // Twitter Card
+  document.getElementById('meta-tw-title').setAttribute('content', title);
+  document.getElementById('meta-tw-desc').setAttribute('content', desc);
+  document.getElementById('meta-tw-image').setAttribute('content', image);
 }
 
 // ─── BREADCRUMB ─────────────────────────────────────────
@@ -511,16 +624,45 @@ function renderRelated(cars) {
   initNav();
 }
 
+// ─── COMING SOON ─────────────────────────────────────────
+// Shown when a car's JSON file doesn't exist yet (404).
+// Pulls whatever basic info is available from index.json
+// to make the page feel personalised rather than generic.
+function showComingSoon(car) {
+  document.getElementById('page-transition').classList.add('loaded');
+  document.getElementById('coming-soon-state').style.display = 'block';
+
+  // Hide the main car content sections
+  hideMainContent();
+
+  // If we got basic car data from index.json, populate the hero
+  if (car) {
+    document.title = `${car.make} ${car.model} — Coming Soon · Garage Atlas`;
+    document.getElementById('cs-eyebrow').textContent =
+      `${car.make} · ${car.era} · ${car.years}`;
+    document.getElementById('cs-img').textContent = car.abbr;
+    document.getElementById('cs-title').innerHTML =
+      `${car.model.toUpperCase()}<br><span style="color:var(--orange)">COMING SOON</span>`;
+  }
+}
+
 // ─── ERROR STATE ─────────────────────────────────────────
-// Hides main content and shows the "Car Not Found" message
+// Shown only when there's no ?id= in the URL at all.
 function showError() {
   document.getElementById('page-transition').classList.add('loaded');
   document.getElementById('error-state').style.display = 'block';
+  hideMainContent();
+}
 
-  // Hide the hero and content sections
-  document.querySelector('.car-hero')     && (document.querySelector('.car-hero').style.display     = 'none');
-  document.querySelector('.content-layout') && (document.querySelector('.content-layout').style.display = 'none');
-  document.querySelector('.breadcrumb')   && (document.querySelector('.breadcrumb').style.display   = 'none');
+// ─── HIDE MAIN CONTENT ───────────────────────────────────
+// Hides the hero, breadcrumb, and content layout so only
+// the coming-soon or error state is visible.
+function hideMainContent() {
+  const hide = ['.car-hero', '.content-layout', '.breadcrumb'];
+  hide.forEach(sel => {
+    const el = document.querySelector(sel);
+    if (el) el.style.display = 'none';
+  });
 }
 
 // ─── SCROLL REVEAL ───────────────────────────────────────

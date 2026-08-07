@@ -1,0 +1,176 @@
+{
+  "id": "civictyper",
+  "make": "Honda",
+  "model": "Civic Type R",
+  "abbr": "CTR",
+  "years": "2017–Present",
+  "era": "2010s",
+  "category": "sport",
+  "drivetrain": "FWD",
+  "engine": "2.0L Turbo",
+  "hp": 316,
+  "torque": 295,
+  "zero_to_sixty": "5.0",
+  "base_price": "$39,990",
+  "units_produced": "N/A",
+
+  "images": {
+    "thumb":   "Images/civictyper/thumb.jpg",
+    "hero":    "Images/civictyper/hero.jpg",
+    "gallery": [
+      "Images/civictyper/gallery1.jpg",
+      "Images/civictyper/gallery2.jpg",
+      "Images/civictyper/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Honda · Sport Compact · 2017–Present",
+    "title": "CIVIC\nTYPE R",
+    "subtitle": "FK8/FL5 Generation · 2017–Present",
+    "image_text": "CTR",
+    "badges": [
+      { "label": "316 HP",         "highlight": true  },
+      { "label": "295 lb-ft",      "highlight": true  },
+      { "label": "2.0L Turbocharged", "highlight": false },
+      { "label": "6-Speed Manual", "highlight": false },
+      { "label": "FWD",            "highlight": false },
+      { "label": "LSD Standard",   "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",       "href": "index.html"            },
+    { "label": "Browse",     "href": "browse.html"           },
+    { "label": "Honda",      "href": "browse.html?make=honda" },
+    { "label": "Civic",      "href": "browse.html?q=civic"  },
+    { "label": "Type R",     "href": null }
+  ],
+
+  "history": [
+    "The <strong>Honda Civic Type R</strong> represents the ultimate expression of Honda's engineering philosophy — maximum performance through precision engineering rather than raw displacement. The FK8 generation, launched in North America for 2017, marked the first time Honda officially brought the legendary Type R badge stateside, and it arrived with a statement: a Nürburgring lap record for front-wheel-drive production cars.",
+    "Powering the Type R is Honda's <strong>K20C1 2.0-liter turbocharged four-cylinder</strong>, producing 316 horsepower and 295 lb-ft of torque. Unlike many turbocharged engines that sacrifice high-rpm excitement for low-end torque, the K20C1 pulls strongly all the way to its 7,000 rpm redline — a hallmark of Honda's VTEC-influenced engineering DNA.",
+    "The Type R's chassis is equally impressive. Honda's <strong>dual-axis strut front suspension</strong> virtually eliminates torque steer — the arch-enemy of powerful front-wheel-drive cars — allowing the driver to put down power aggressively mid-corner without the wheel fighting back. The standard limited-slip differential further enhances traction out of corners.",
+    "The FL5 generation arrived for 2023 with a more mature design, revised suspension tuning, and a further refined powertrain. While critics initially questioned the controversial styling of the FK8, the driving experience was beyond reproach — setting yet another Nürburgring front-wheel-drive production car record and cementing the Type R's legacy as the benchmark hot hatch."
+  ],
+
+  "timeline": [
+    { "dot": "EK9",  "label": "1st Gen CTR",  "year": "1997–2000", "active": false },
+    { "dot": "EP3",  "label": "2nd Gen CTR",  "year": "2001–2005", "active": false },
+    { "dot": "FD2",  "label": "3rd Gen CTR",  "year": "2007–2010", "active": false },
+    { "dot": "FK8",  "label": "US Launch",    "year": "2017–2021", "active": true  },
+    { "dot": "FL5",  "label": "Current Gen",  "year": "2023–Pres.", "active": false }
+  ],
+
+  "did_you_know": "The FK8 Civic Type R set the <strong>Nürburgring Nordschleife lap record</strong> for front-wheel-drive production cars in 2017 with a time of 7:43.80 — beating the previous record held by the Volkswagen Golf GTI Clubsport S by over two seconds. It then broke its own record with the FL5 in 2023.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine",        "value": "2.0L DOHC Turbocharged I4 (K20C1)", "highlight": true  },
+        { "label": "Displacement",  "value": "1,995 cc",                           "highlight": false },
+        { "label": "Horsepower",    "value": "316 hp @ 6,500 rpm",                "highlight": true  },
+        { "label": "Torque",        "value": "295 lb-ft @ 2,500–4,500 rpm",       "highlight": true  },
+        { "label": "Compression",   "value": "9.8:1",                              "highlight": false },
+        { "label": "Boost (stock)", "value": "~20 psi",                            "highlight": false },
+        { "label": "Transmission",  "value": "6-speed manual (rev-match standard)","highlight": false },
+        { "label": "Drivetrain",    "value": "Front-Wheel Drive (FWD)",           "highlight": false },
+        { "label": "Differential",  "value": "Limited-Slip Differential (LSD)",   "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "5.0 seconds",        "highlight": true  },
+        { "label": "Quarter Mile",        "value": "13.5 sec @ 105 mph", "highlight": false },
+        { "label": "Top Speed",           "value": "169 mph",            "highlight": false },
+        { "label": "Lateral G",           "value": "1.02g",              "highlight": false },
+        { "label": "Braking (60–0)",      "value": "98 ft",              "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "22 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "28 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "24 mpg",             "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "3,117 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "107.7 in",  "highlight": false },
+        { "label": "Length",      "value": "179.7 in",  "highlight": false },
+        { "label": "Width",       "value": "74.4 in",   "highlight": false },
+        { "label": "Height",      "value": "55.9 in",   "highlight": false },
+        { "label": "Front Track", "value": "63.1 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "63.2 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Civic Type R",
+      "years": "2017–2021 (FK8)",
+      "description": "The sole trim level for the FK8 generation — Honda's one-size-fits-all approach ensures every Type R buyer gets the full package: Brembo brakes, adaptive dampers, LSD, and the full aero kit."
+    },
+    {
+      "name": "Type R (FL5)",
+      "years": "2023–Present",
+      "description": "The redesigned FL5 generation with a more mature exterior, revised suspension geometry, and a 2.0L turbo producing the same 315 hp but with improved throttle response and a more linear power delivery."
+    },
+    {
+      "name": "Type R Touring",
+      "years": "2023–Present",
+      "description": "FL5-exclusive trim adding a premium Bose audio system, wireless Apple CarPlay and Android Auto, and additional interior comfort features while retaining the complete performance hardware."
+    },
+    {
+      "name": "Limited Edition",
+      "years": "2021 (FK8)",
+      "description": "Final-year FK8 special edition in Championship White only, featuring bronze BBS wheels, red brake calipers, and an Alcantara interior — a send-off to the generation that put the Type R on the American map."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "FK8 Limited Edition",
+      "description": "The swan song of the FK8 generation, limited to 100 units in the US. Championship White with bronze BBS forged wheels and red Brembo calipers made it instantly recognizable — and immediately collectible."
+    },
+    {
+      "name": "Mugen Civic Type R",
+      "description": "Honda's in-house tuning arm Mugen offered a comprehensive upgrade package for the FK8 including a Mugen exhaust, carbon fiber aero additions, and suspension tuning. A Japan-market favorite widely imported by enthusiasts."
+    },
+    {
+      "name": "FL5 Type R",
+      "description": "The 2023 FL5 generation refined everything the FK8 did well. A more grown-up design, better everyday livability, and another Nürburgring record made it the definitive modern Type R — and arguably the best front-wheel-drive car ever made."
+    }
+  ],
+
+  "colors": [
+    { "name": "Championship White", "hex": "#e8e6e0" },
+    { "name": "Rallye Red",         "hex": "#c0272d" },
+    { "name": "Sonic Grey",         "hex": "#7a7e84" },
+    { "name": "Boost Blue",         "hex": "#1a4070" },
+    { "name": "Crystal Black",      "hex": "#1c1c1e" },
+    { "name": "Lunar Silver",       "hex": "#a8aeb4" }
+  ],
+
+  "quick_ref": [
+    { "label": "Make",           "value": "Honda",             "highlight": false },
+    { "label": "Model",          "value": "Civic Type R",      "highlight": false },
+    { "label": "Years",          "value": "2017–Present",      "highlight": false },
+    { "label": "Horsepower",     "value": "316 hp",            "highlight": true  },
+    { "label": "Torque",         "value": "295 lb-ft",         "highlight": true  },
+    { "label": "Engine",         "value": "2.0L Turbo I4",     "highlight": false },
+    { "label": "Transmission",   "value": "6-Speed Manual",    "highlight": false },
+    { "label": "Drive",          "value": "FWD",               "highlight": false },
+    { "label": "0–60 mph",       "value": "5.0 sec",           "highlight": true  },
+    { "label": "Base Price",     "value": "$39,990",           "highlight": false },
+    { "label": "Units Produced", "value": "N/A",               "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Volkswagen", "model": "Golf GTI",       "id": "golfgti"   },
+    { "make": "Dodge",      "model": "Neon SRT-4",     "id": "srt4"      },
+    { "make": "Hyundai",    "model": "Elantra N",      "id": "elantraN"  },
+    { "make": "Toyota",     "model": "GR Corolla",     "id": "grcorolla" }
+  ]
+}

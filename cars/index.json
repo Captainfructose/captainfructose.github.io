@@ -22,7 +22,8 @@
     "engine":     "2.0L Turbo",
     "drivetrain": "FWD",
     "era":        "2010s",
-    "category":   "sport"
+    "category":   "sport",
+    "thumb":      "Images/civictyper/thumb.jpg"
   },
   {
     "id":         "wrxsti",
@@ -34,7 +35,8 @@
     "engine":     "2.5L Turbo Boxer",
     "drivetrain": "AWD",
     "era":        "2000s",
-    "category":   "jdm"
+    "category":   "jdm",
+    "thumb":      "Images/wrxsti/thumb.jpg"
   },
   {
     "id":         "gt500",
@@ -118,7 +120,8 @@
     "engine":     "5.0L V8",
     "drivetrain": "RWD",
     "era":        "2010s",
-    "category":   "muscle"
+    "category":   "muscle",
+    "thumb":      "Images/mustanggt/thumb.jpg"
   },
   {
     "id":         "vipersrt10",

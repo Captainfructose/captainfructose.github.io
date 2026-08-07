@@ -1,0 +1,176 @@
+{
+  "id": "wrxsti",
+  "make": "Subaru",
+  "model": "WRX STI",
+  "abbr": "STI",
+  "years": "2004–2021",
+  "era": "2000s",
+  "category": "jdm",
+  "drivetrain": "AWD",
+  "engine": "2.5L Turbo Boxer",
+  "hp": 305,
+  "torque": 290,
+  "zero_to_sixty": "4.7",
+  "base_price": "$34,395",
+  "units_produced": "N/A",
+
+  "images": {
+    "thumb":   "Images/wrxsti/thumb.jpg",
+    "hero":    "Images/wrxsti/hero.jpg",
+    "gallery": [
+      "Images/wrxsti/gallery1.jpg",
+      "Images/wrxsti/gallery2.jpg",
+      "Images/wrxsti/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Subaru · JDM · 2004–2021",
+    "title": "WRX\nSTI",
+    "subtitle": "2004–2021 Production",
+    "image_text": "STI",
+    "badges": [
+      { "label": "305 HP",              "highlight": true  },
+      { "label": "290 lb-ft",           "highlight": true  },
+      { "label": "2.5L Turbo Boxer",    "highlight": false },
+      { "label": "6-Speed Manual",      "highlight": false },
+      { "label": "AWD",                 "highlight": false },
+      { "label": "Symmetrical AWD",     "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",    "href": "index.html"           },
+    { "label": "Browse",  "href": "browse.html"          },
+    { "label": "Subaru",  "href": "browse.html?make=subaru" },
+    { "label": "WRX",     "href": "browse.html?q=wrx"   },
+    { "label": "STI",     "href": null }
+  ],
+
+  "history": [
+    "The <strong>Subaru WRX STI</strong> is the pinnacle of Subaru's performance lineage, born from decades of World Rally Championship dominance. Introduced to the North American market in 2004, the STI brought the fire-breathing performance of Subaru's rally cars to public roads, wrapped in a practical four-door sedan body.",
+    "At the heart of the STI is Subaru's signature <strong>EJ257 2.5-liter turbocharged flat-four engine</strong> — a boxer configuration that lowers the center of gravity and produces a distinctive exhaust burble beloved by enthusiasts worldwide. Paired with a close-ratio 6-speed manual transmission and Subaru's legendary Symmetrical All-Wheel Drive system, the STI offered rally-bred traction in virtually any condition.",
+    "The STI's <strong>Driver Controlled Center Differential (DCCD)</strong> set it apart from competitors, allowing drivers to manually adjust the front-to-rear torque split on the fly. Combined with Brembo brakes, Bilstein dampers, and an aggressive aero package, the STI was as capable on a twisty mountain road as it was on a stage rally course.",
+    "Production of the beloved EJ-powered STI continued through 2021, when Subaru retired the model in the United States. Over its 17-year run, the WRX STI became one of the most iconic performance cars of its generation — a benchmark for all-weather performance and driver engagement that remains deeply revered by enthusiasts worldwide."
+  ],
+
+  "timeline": [
+    { "dot": "GC8",  "label": "1st Gen STI",   "year": "1994–2001", "active": false },
+    { "dot": "GD",   "label": "2nd Gen STI",   "year": "2002–2007", "active": false },
+    { "dot": "US",   "label": "US Launch",     "year": "2004",      "active": true  },
+    { "dot": "GR",   "label": "Hatch Era",     "year": "2008–2014", "active": false },
+    { "dot": "VA",   "label": "Final Gen",     "year": "2015–2021", "active": false }
+  ],
+
+  "did_you_know": "The STI's iconic <strong>rear wing</strong> isn't just for looks — at highway speeds it generates meaningful downforce to keep the rear of the car planted. The large Gurney flap on the trailing edge was a direct carryover from Subaru's World Rally Championship cars.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine",         "value": "2.5L DOHC Turbocharged Flat-4 (EJ257)", "highlight": true  },
+        { "label": "Displacement",   "value": "2,457 cc",                               "highlight": false },
+        { "label": "Horsepower",     "value": "305 hp @ 6,000 rpm",                    "highlight": true  },
+        { "label": "Torque",         "value": "290 lb-ft @ 4,000 rpm",                 "highlight": true  },
+        { "label": "Compression",    "value": "8.0:1",                                  "highlight": false },
+        { "label": "Boost (stock)",  "value": "~14.7 psi",                              "highlight": false },
+        { "label": "Transmission",   "value": "6-speed close-ratio manual",            "highlight": false },
+        { "label": "Drivetrain",     "value": "Symmetrical AWD w/ DCCD",              "highlight": false },
+        { "label": "Differential",   "value": "Driver Controlled Center Diff (DCCD)",  "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "4.7 seconds",        "highlight": true  },
+        { "label": "Quarter Mile",        "value": "13.4 sec @ 103 mph", "highlight": false },
+        { "label": "Top Speed",           "value": "159 mph",            "highlight": false },
+        { "label": "Lateral G",           "value": "0.93g",              "highlight": false },
+        { "label": "Braking (60–0)",      "value": "105 ft",             "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "17 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "23 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "19 mpg",             "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "3,389 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "104.3 in",  "highlight": false },
+        { "label": "Length",      "value": "180.9 in",  "highlight": false },
+        { "label": "Width",       "value": "69.9 in",   "highlight": false },
+        { "label": "Height",      "value": "57.9 in",   "highlight": false },
+        { "label": "Front Track", "value": "59.5 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "59.5 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "WRX STI",
+      "years": "2004–2021",
+      "description": "The base STI trim with the full performance package — EJ257 engine, DCCD AWD, Brembo brakes, Bilstein dampers, and the iconic rear wing."
+    },
+    {
+      "name": "STI Limited",
+      "years": "2008–2021",
+      "description": "Adds premium interior appointments including leather seating, navigation, and upgraded audio while retaining the full performance hardware."
+    },
+    {
+      "name": "STI Sport",
+      "years": "2018–2021",
+      "description": "Mid-tier trim adding Recaro front seats, a leather-wrapped steering wheel, and gloss black exterior accents over the base STI."
+    },
+    {
+      "name": "STI Type RA",
+      "years": "2018",
+      "description": "Record Attempt special edition limited to 500 units. Reduced weight, STI Performance exhaust, carbon fiber roof, and a Nürburgring-tuned suspension."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "STI Type RA",
+      "description": "A 500-unit limited edition built to set lap records. The carbon fiber roof, lightweight 18-inch BBS wheels, and STI Performance exhaust made it the lightest and most track-focused STI sold in the US."
+    },
+    {
+      "name": "STI S209",
+      "description": "The first Subaru S-line model sold in the United States, limited to 209 units. Featured an upgraded EJ257 producing 341 hp, wider fenders, and a massive dual-element rear wing — a true collector's item."
+    },
+    {
+      "name": "STI Spec C",
+      "description": "A Japan-market variant with significant weight reduction, revised suspension tuning, and a higher-flowing intake system. Never officially sold in North America but highly sought after by importers."
+    }
+  ],
+
+  "colors": [
+    { "name": "WR Blue",       "hex": "#1a3d7a" },
+    { "name": "Crystal White", "hex": "#e8e8e8" },
+    { "name": "Ice Silver",    "hex": "#a8aeb4" },
+    { "name": "Dark Grey",     "hex": "#3a3c40" },
+    { "name": "Lapis Blue",    "hex": "#1e2f5a" },
+    { "name": "Rally Red",     "hex": "#b8272c" }
+  ],
+
+  "quick_ref": [
+    { "label": "Make",           "value": "Subaru",              "highlight": false },
+    { "label": "Model",          "value": "WRX STI",             "highlight": false },
+    { "label": "Years",          "value": "2004–2021",           "highlight": false },
+    { "label": "Horsepower",     "value": "305 hp",              "highlight": true  },
+    { "label": "Torque",         "value": "290 lb-ft",           "highlight": true  },
+    { "label": "Engine",         "value": "2.5L Turbo Boxer",    "highlight": false },
+    { "label": "Transmission",   "value": "6-Speed Manual",      "highlight": false },
+    { "label": "Drive",          "value": "Symmetrical AWD",     "highlight": false },
+    { "label": "0–60 mph",       "value": "4.7 sec",             "highlight": true  },
+    { "label": "Base Price",     "value": "$34,395",             "highlight": false },
+    { "label": "Units Produced", "value": "N/A",                 "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Mitsubishi", "model": "Lancer Evolution", "id": "evo8"      },
+    { "make": "Dodge",      "model": "Neon SRT-4",       "id": "srt4"      },
+    { "make": "Ford",       "model": "Focus RS",         "id": "focusrs"   },
+    { "make": "Volkswagen", "model": "Golf R",           "id": "golfr"     }
+  ]
+}
