@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browse — Garage Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="page-transition"></div>
+
+<!-- ─── NAV ─────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <path d="M16 2C11.03 2 7 6.03 7 11c0 6.75 9 19 9 19s9-12.25 9-19c0-4.97-4.03-9-9-9z" fill="#f97316"/>
+      <circle cx="16" cy="11" r="4" fill="#0e0e0f"/>
+      <path d="M16 8v1M16 13v1M13 11h-1M20 11h-1" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    </svg>
+    <span class="nav-logo-text">GARAGE<span>ATLAS</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="browse.html" class="active">Browse</a></li>
+    <li><a href="browse.html">Makes</a></li>
+    <li><a href="browse.html">By Era</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <!-- Hamburger button — only visible on mobile -->
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="browse.html" class="active">Browse</a>
+  <a href="browse.html">Makes</a>
+  <a href="browse.html">By Era</a>
+  <a href="#">About</a>
+  <div class="drawer-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" placeholder="Search..." id="drawer-search-input" />
+  </div>
+</div>
+
+<!-- ─── PAGE HEADER ──────────────────────────────── -->
+<div class="page-header">
+  <p class="page-header-eyebrow">Garage Atlas · Database</p>
+  <h1 class="page-header-title">BROWSE ALL CARS</h1>
+</div>
+
+<!-- ─── BROWSE LAYOUT ────────────────────────────── -->
+<div class="browse-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Main search input -->
+    <div class="filter-search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" placeholder="Search cars…" id="main-search" />
+    </div>
+
+    <!-- Filter: Make -->
+    <div class="filter-group">
+      <div class="filter-group-title">Make</div>
+      <div class="filter-pills" id="make-filters">
+        <button class="filter-pill active" data-filter="make" data-value="all">All</button>
+        <button class="filter-pill" data-filter="make" data-value="dodge">Dodge</button>
+        <button class="filter-pill" data-filter="make" data-value="honda">Honda</button>
+        <button class="filter-pill" data-filter="make" data-value="ford">Ford</button>
+        <button class="filter-pill" data-filter="make" data-value="subaru">Subaru</button>
+        <button class="filter-pill" data-filter="make" data-value="chevrolet">Chevrolet</button>
+        <button class="filter-pill" data-filter="make" data-value="nissan">Nissan</button>
+        <button class="filter-pill" data-filter="make" data-value="mitsubishi">Mitsubishi</button>
+        <button class="filter-pill" data-filter="make" data-value="toyota">Toyota</button>
+        <button class="filter-pill" data-filter="make" data-value="bmw">BMW</button>
+      </div>
+    </div>
+
+    <!-- Filter: Era -->
+    <div class="filter-group">
+      <div class="filter-group-title">Era</div>
+      <div class="filter-pills" id="era-filters">
+        <button class="filter-pill active" data-filter="era" data-value="all">All</button>
+        <button class="filter-pill" data-filter="era" data-value="1960s">1960s</button>
+        <button class="filter-pill" data-filter="era" data-value="1970s">1970s</button>
+        <button class="filter-pill" data-filter="era" data-value="1980s">1980s</button>
+        <button class="filter-pill" data-filter="era" data-value="1990s">1990s</button>
+        <button class="filter-pill" data-filter="era" data-value="2000s">2000s</button>
+        <button class="filter-pill" data-filter="era" data-value="2010s">2010s</button>
+        <button class="filter-pill" data-filter="era" data-value="2020s">2020s</button>
+      </div>
+    </div>
+
+    <!-- Filter: Category -->
+    <div class="filter-group">
+      <div class="filter-group-title">Category</div>
+      <div class="filter-pills" id="cat-filters">
+        <button class="filter-pill active" data-filter="cat" data-value="all">All</button>
+        <button class="filter-pill" data-filter="cat" data-value="muscle">Muscle</button>
+        <button class="filter-pill" data-filter="cat" data-value="sport">Sport Compact</button>
+        <button class="filter-pill" data-filter="cat" data-value="jdm">JDM</button>
+        <button class="filter-pill" data-filter="cat" data-value="supercar">Supercar</button>
+        <button class="filter-pill" data-filter="cat" data-value="euro">Euro Sport</button>
+        <button class="filter-pill" data-filter="cat" data-value="classic">Classic</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Mobile-only button to toggle the filter sidebar drawer -->
+    <button class="filter-toggle" id="filter-toggle">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/>
+      </svg>
+      Filters
+    </button>
+    <div class="results-header">
+      <div class="results-count">Showing <strong id="result-count">12</strong> results</div>
+      <select class="sort-select" id="sort-select">
+        <option value="default">Sort: Featured</option>
+        <option value="az">Sort: A–Z</option>
+        <option value="year">Sort: Year (Newest)</option>
+        <option value="hp">Sort: HP (Highest)</option>
+      </select>
+    </div>
+
+    <!-- Cards injected by JS -->
+    <div class="cards-grid" id="cards-grid"></div>
+  </main>
+
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">GARAGE<span>ATLAS</span></div>
+  <div class="footer-copy">© 2025 Garage Atlas · Every Car. Every Road. Every Story.</div>
+</footer>
+
+<script>
+  // ═══════════════════════════════════════════════════════
+  // browse.html — JSON-driven browse/search page
+  //
+  // Flow:
+  //   1. Fetch cars/index.json (lightweight manifest of all cars)
+  //   2. Store in CARS array
+  //   3. Apply filters/search/sort and render cards
+  //   4. Adding a new car: add its entry to cars/index.json
+  // ═══════════════════════════════════════════════════════
+
+  // ─── STATE ──────────────────────────────────────────────
+  let CARS    = [];   // populated from cars/index.json
+  let filters = { make: 'all', era: 'all', cat: 'all' };
+  let searchQ = '';
+  let sortBy  = 'default';
+
+  // ─── READ URL PARAMS (from hero search on index.html) ───
+  // e.g. browse.html?q=supra  or  browse.html?make=dodge
+  const params = new URLSearchParams(location.search);
+  if (params.has('q'))    searchQ = params.get('q');
+  if (params.has('make')) filters.make = params.get('make');
+
+  // ─── HAMBURGER MENU ─────────────────────────────
+  document.getElementById('nav-hamburger').addEventListener('click', () => {
+    document.getElementById('nav-drawer').classList.toggle('open');
+    document.getElementById('nav-hamburger').classList.toggle('open');
+  });
+
+  // Drawer search
+  document.getElementById('drawer-search-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const q = e.target.value.trim();
+      window.location.href = q ? `browse.html?q=${encodeURIComponent(q)}` : 'browse.html';
+    }
+  });
+
+  // ─── MOBILE FILTER DRAWER TOGGLE ────────────────
+  // Shows/hides the sidebar on mobile when "Filters" button is tapped
+  document.getElementById('filter-toggle').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.toggle('open');
+  });
+
+  // ─── FETCH INDEX + INIT ──────────────────────────────────
+  // Fetch the car manifest, then render everything
+  fetch('cars/index.json')
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      CARS = data;
+
+      // Pre-fill the search box if a query came in via URL
+      if (searchQ) document.getElementById('main-search').value = searchQ;
+
+      // Activate the correct make filter pill if ?make= was passed
+      if (filters.make !== 'all') {
+        document.querySelectorAll('.filter-pill[data-filter="make"]').forEach(p => {
+          p.classList.toggle('active', p.dataset.value === filters.make);
+        });
+      }
+
+      renderCards();
+      document.getElementById('page-transition').classList.add('loaded');
+      attachTransitionLinks();
+    })
+    .catch(err => {
+      // If the fetch fails, show an error in the grid
+      console.error('Failed to load car index:', err);
+      document.getElementById('cards-grid').innerHTML = `
+        <div class="no-results">
+          <div class="no-results-icon">⚠️</div>
+          <h3>Could Not Load Cars</h3>
+          <p>Make sure cars/index.json exists and the site is served over HTTP.</p>
+        </div>`;
+      document.getElementById('page-transition').classList.add('loaded');
+    });
+
+  // ─── RENDER CARDS ───────────────────────────────────────
+  // Filters, sorts, and re-renders the card grid from CARS
+  function renderCards() {
+    let data = CARS.filter(car => {
+      // Text search across make, model, and years
+      const q = searchQ.toLowerCase();
+      const matchSearch = !q ||
+        car.make.toLowerCase().includes(q)  ||
+        car.model.toLowerCase().includes(q) ||
+        car.years.includes(q);
+
+      // Make filter (pill selection)
+      const matchMake = filters.make === 'all' ||
+        car.make.toLowerCase() === filters.make;
+
+      // Era filter
+      const matchEra = filters.era === 'all' ||
+        car.era === filters.era;
+
+      // Category filter
+      const matchCat = filters.cat === 'all' ||
+        car.category === filters.cat;
+
+      return matchSearch && matchMake && matchEra && matchCat;
+    });
+
+    // Sort the filtered results
+    if (sortBy === 'az') {
+      data.sort((a, b) => (a.make + a.model).localeCompare(b.make + b.model));
+    } else if (sortBy === 'year') {
+      data.sort((a, b) => parseInt(b.years) - parseInt(a.years));
+    } else if (sortBy === 'hp') {
+      data.sort((a, b) => b.hp - a.hp);
+    }
+
+    const grid = document.getElementById('cards-grid');
+    document.getElementById('result-count').textContent = data.length;
+
+    // Build a card for each car; link to car.html?id={id}
+    // If the car has a thumb image path set, use it as a background;
+    // otherwise fall back to the gradient + abbreviation text placeholder.
+    grid.innerHTML = data.length ? data.map((car, i) => {
+      // Thumb image: use a CSS background if path provided, else show abbr text
+      const thumbStyle = car.thumb
+        ? `style="background-image:url('${car.thumb}'); background-size:cover; background-position:center;"`
+        : '';
+      const thumbText = car.thumb ? '' : car.abbr;
+
+      return `
+        <a href="car.html?id=${car.id}" class="car-card card-appear" style="animation-delay:${i * 50}ms">
+          <div class="card-img" ${thumbStyle}>${thumbText}</div>
+          <div class="card-body">
+            <div class="card-badge">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+              </svg>
+              ${car.years}
+            </div>
+            <div class="card-make">${car.make}</div>
+            <div class="card-model">${car.model}</div>
+            <div class="card-spec">
+              <strong>${car.hp} hp</strong> · ${car.engine} · ${car.drivetrain}
+            </div>
+          </div>
+        </a>
+      `;
+    }).join('') : `
+      <div class="no-results">
+        <div class="no-results-icon">🔍</div>
+        <h3>No Results Found</h3>
+        <p>Try adjusting your filters or search term.</p>
+      </div>
+    `;
+
+    // Re-attach page transition listeners to the newly created cards
+    attachTransitionLinks();
+  }
+
+  // ─── FILTER PILLS ───────────────────────────────────────
+  // Clicking a pill updates the filter state and re-renders
+  document.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filterType = pill.dataset.filter;
+      const value      = pill.dataset.value;
+
+      // Deactivate all pills in this group, activate the clicked one
+      document.querySelectorAll(`.filter-pill[data-filter="${filterType}"]`)
+        .forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      filters[filterType] = value;
+      renderCards();
+    });
+  });
+
+  // ─── SEARCH INPUT ───────────────────────────────────────
+  document.getElementById('main-search').addEventListener('input', e => {
+    searchQ = e.target.value.trim();
+    renderCards();
+  });
+
+  // Nav search bar mirrors the main search field
+  document.getElementById('nav-search-input').addEventListener('input', e => {
+    searchQ = e.target.value.trim();
+    document.getElementById('main-search').value = searchQ;
+    renderCards();
+  });
+
+  // ─── SORT ───────────────────────────────────────────────
+  document.getElementById('sort-select').addEventListener('change', e => {
+    sortBy = e.target.value;
+    renderCards();
+  });
+
+  // ─── PAGE TRANSITIONS ───────────────────────────────────
+  // Fade-out overlay before navigating to any internal page
+  function attachTransitionLinks() {
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (link._transitionBound) return;
+      link._transitionBound = true;
+      const target = link.getAttribute('href');
+      if (!target || target.startsWith('#')) return;
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const overlay = document.getElementById('page-transition');
+        overlay.classList.remove('loaded');
+        setTimeout(() => { window.location.href = target; }, 350);
+      });
+    });
+  }
+</script>
+</body>
+</html>

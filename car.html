@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Title is set dynamically by JS once the JSON loads -->
+  <title>Garage Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Page transition overlay — starts opaque, fades out once data is loaded -->
+<div id="page-transition"></div>
+
+<!-- ─── NAV ─────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <path d="M16 2C11.03 2 7 6.03 7 11c0 6.75 9 19 9 19s9-12.25 9-19c0-4.97-4.03-9-9-9z" fill="#f97316"/>
+      <circle cx="16" cy="11" r="4" fill="#0e0e0f"/>
+      <path d="M16 8v1M16 13v1M13 11h-1M20 11h-1" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    </svg>
+    <span class="nav-logo-text">GARAGE<span>ATLAS</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="browse.html">Makes</a></li>
+    <li><a href="browse.html">By Era</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <!-- Hamburger button — only visible on mobile -->
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="browse.html">Browse</a>
+  <a href="browse.html">Makes</a>
+  <a href="browse.html">By Era</a>
+  <a href="#">About</a>
+  <div class="drawer-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" placeholder="Search..." id="drawer-search-input" />
+  </div>
+</div>
+
+<!-- ─── DYNAMIC CONTENT ──────────────────────────
+     All sections below are empty shells.
+     JS fetches the car's JSON and fills them in.
+─────────────────────────────────────────────────── -->
+
+<!-- Breadcrumb trail: Home / Browse / Make / Model / Trim -->
+<div class="breadcrumb" id="breadcrumb"></div>
+
+<!-- Hero: large title + badge strip + image panel -->
+<div class="car-hero">
+  <div class="car-hero-info">
+    <p class="car-hero-eyebrow" id="hero-eyebrow"></p>
+    <h1 class="car-hero-title"  id="hero-title"></h1>
+    <p class="car-hero-sub"     id="hero-subtitle"></p>
+    <div class="hero-badges"    id="hero-badges"></div>
+  </div>
+  <div class="car-hero-img"     id="hero-img"></div>
+</div>
+
+<!-- Main two-column layout: article | sidebar -->
+<div class="content-layout">
+
+  <!-- LEFT: Article -->
+  <article>
+
+    <!-- History section -->
+    <div class="section-head reveal">
+      <h2>HISTORY</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <div class="history-text reveal" id="history-text"></div>
+
+    <!-- Generation timeline -->
+    <div class="section-head reveal" style="margin-top:2.5rem;">
+      <h2>GENERATION TIMELINE</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-track" id="timeline-track"></div>
+    </div>
+
+    <!-- Did You Know callout -->
+    <div class="dyk-box reveal" id="dyk-box"></div>
+
+    <!-- Performance specs tables (one per group) -->
+    <div id="specs-section"></div>
+
+    <!-- Trim levels grid -->
+    <div class="section-head reveal" style="margin-top:2.5rem;">
+      <h2>TRIM LEVELS</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <div class="trim-cards reveal" id="trim-cards"></div>
+
+    <!-- Notable variants -->
+    <div class="section-head reveal">
+      <h2>NOTABLE VARIANTS</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <div class="variants-list reveal" id="variants-list"></div>
+
+    <!-- Photo gallery (only rendered if car has gallery images) -->
+    <div id="gallery-section"></div>
+
+    <!-- Factory colors -->
+    <div class="section-head reveal">
+      <h2>FACTORY COLORS</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <div class="colors-grid reveal" id="colors-grid"></div>
+
+  </article>
+
+
+  <!-- RIGHT: Sticky sidebar -->
+  <aside class="sidebar-sticky">
+
+    <!-- Quick reference stats card -->
+    <div class="sidebar-stats-card">
+      <div class="sidebar-stats-head">Quick Reference</div>
+      <div id="quick-ref-rows"></div>
+    </div>
+
+    <!-- Related cars list -->
+    <div class="related-card">
+      <div class="related-head">Related Cars</div>
+      <div id="related-links"></div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">GARAGE<span>ATLAS</span></div>
+  <div class="footer-copy">© 2025 Garage Atlas · Every Car. Every Road. Every Story.</div>
+</footer>
+
+<!-- ─── LIGHTBOX OVERLAY ─────────────────────────────
+     Hidden by default. JS shows it when a gallery image
+     is clicked, displaying the full-size photo.
+─────────────────────────────────────────────────────── -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 6 6 18M6 6l12 12"/>
+    </svg>
+  </button>
+  <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  <button class="lightbox-next" id="lightbox-next" aria-label="Next">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<!-- ─── ERROR STATE ──────────────────────────────────
+     Shown if the car ID is missing or the JSON fetch fails
+─────────────────────────────────────────────────────── -->
+<div id="error-state" style="display:none; text-align:center; padding:8rem 2rem;">
+  <div style="font-size:3rem; margin-bottom:1rem;">🔍</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3rem; margin-bottom:0.5rem;">Car Not Found</h2>
+  <p style="color:#7a7870; margin-bottom:2rem;">No data found for this entry. Check the car ID or add a JSON file.</p>
+  <a href="browse.html" style="color:#f97316; font-family:'Barlow Condensed',sans-serif; letter-spacing:0.12em; text-transform:uppercase;">← Back to Browse</a>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// car.html — Dynamic car page
+//
+// Flow:
+//   1. Read ?id= from the URL
+//   2. Fetch /cars/{id}.json
+//   3. Call render functions to populate each section
+//   4. Fade in the page and activate scroll-reveal
+// ═══════════════════════════════════════════════════════
+
+// ─── 1. READ URL PARAM ──────────────────────────────────
+// e.g. car.html?id=srt4  →  carId = "srt4"
+const params = new URLSearchParams(location.search);
+const carId  = params.get('id');
+
+// ─── 2. FETCH JSON & KICK OFF RENDER ────────────────────
+if (!carId) {
+  showError();
+} else {
+  fetch(`cars/${carId}.json`)
+    .then(res => {
+      // A 404 or other HTTP error still resolves the promise,
+      // so we manually throw if the response isn't OK
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(car => renderAll(car))
+    .catch(() => showError());
+}
+
+// ─── RENDER ALL SECTIONS ────────────────────────────────
+// Called once with the full car data object
+function renderAll(car) {
+  // Update browser tab title
+  document.title = `${car.years} ${car.make} ${car.model} — Garage Atlas`;
+
+  renderBreadcrumb(car.breadcrumb);
+  renderHero(car.hero, car.images);       // images passed for hero photo
+  renderHistory(car.history);
+  renderTimeline(car.timeline);
+  renderDYK(car.did_you_know);
+  renderSpecs(car.specs);
+  renderTrims(car.trims);
+  renderVariants(car.variants);
+  renderGallery(car.images);              // gallery section
+  renderColors(car.colors);
+  renderQuickRef(car.quick_ref);
+  renderRelated(car.related, car.images); // thumb passed for related cards
+
+  // Fade in the page now that content is ready
+  document.getElementById('page-transition').classList.add('loaded');
+
+  // Activate scroll-reveal observer after content exists in the DOM
+  initScrollReveal();
+
+  // Wire up nav search and page transition links
+  initNav();
+}
+
+// ─── BREADCRUMB ─────────────────────────────────────────
+// Builds: Home / Browse / Make / Model / Trim
+function renderBreadcrumb(items) {
+  const el = document.getElementById('breadcrumb');
+  el.innerHTML = items.map((item, i) => {
+    const isLast = i === items.length - 1;
+    const sep    = i > 0 ? '<span class="sep">/</span>' : '';
+
+    // Last item is the current page — no link, orange color
+    if (isLast || !item.href) {
+      return `${sep}<span class="current">${item.label}</span>`;
+    }
+    return `${sep}<a href="${item.href}">${item.label}</a>`;
+  }).join('');
+}
+
+// ─── HERO ────────────────────────────────────────────────
+// Populates the large title block, badge strip, and hero image.
+// If images.hero exists, show a real photo; otherwise fall back
+// to the gradient placeholder with the abbreviation text.
+function renderHero(hero, images) {
+  document.getElementById('hero-eyebrow').textContent  = hero.eyebrow;
+  document.getElementById('hero-subtitle').textContent = hero.subtitle;
+
+  // Title may contain a newline character for the two-line layout
+  document.getElementById('hero-title').innerHTML =
+    hero.title.replace('\n', '<br>');
+
+  // Badge pills (highlighted ones get the orange treatment)
+  document.getElementById('hero-badges').innerHTML = hero.badges.map(b =>
+    `<span class="hero-badge ${b.highlight ? 'highlight' : ''}">${b.label}</span>`
+  ).join('');
+
+  // Hero image panel — real photo if available, gradient fallback if not
+  const heroImgEl = document.getElementById('hero-img');
+  if (images && images.hero) {
+    // Use a real photo; add the class for full-bleed image styling
+    heroImgEl.classList.add('has-image');
+    heroImgEl.innerHTML = `<img src="${images.hero}" alt="${hero.eyebrow}" />`;
+  } else {
+    // No image — show the abbreviation text over the gradient
+    heroImgEl.textContent = hero.image_text;
+  }
+}
+
+// ─── GALLERY ─────────────────────────────────────────────
+// Renders a photo grid below the variants section.
+// Skipped entirely if the car has no gallery images.
+// Each thumbnail opens the lightbox on click.
+function renderGallery(images) {
+  const section = document.getElementById('gallery-section');
+
+  // Nothing to show — hide the section entirely
+  if (!images || !images.gallery || images.gallery.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+
+  const gallery = images.gallery;
+
+  section.innerHTML = `
+    <div class="section-head reveal">
+      <h2>GALLERY</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      ${gallery.map((src, i) => `
+        <div class="gallery-thumb" data-index="${i}">
+          <img src="${src}" alt="Gallery photo ${i + 1}" loading="lazy" />
+          <div class="gallery-thumb-overlay">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  // Wire up each thumbnail to open the lightbox at that index
+  section.querySelectorAll('.gallery-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      openLightbox(gallery, parseInt(thumb.dataset.index));
+    });
+  });
+}
+
+// ─── LIGHTBOX ────────────────────────────────────────────
+// A simple fullscreen photo viewer with prev/next navigation.
+// Opened by clicking a gallery thumbnail.
+let _lbImages = [];  // current gallery array
+let _lbIndex  = 0;   // currently displayed index
+
+function openLightbox(images, index) {
+  _lbImages = images;
+  _lbIndex  = index;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden'; // prevent background scroll
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function updateLightbox() {
+  // Swap the image src and update the counter label
+  document.getElementById('lightbox-img').src     = _lbImages[_lbIndex];
+  document.getElementById('lightbox-counter').textContent =
+    `${_lbIndex + 1} / ${_lbImages.length}`;
+}
+
+// Lightbox controls — close, prev, next
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+
+document.getElementById('lightbox-prev').addEventListener('click', () => {
+  // Wrap around to the last image if at the beginning
+  _lbIndex = (_lbIndex - 1 + _lbImages.length) % _lbImages.length;
+  updateLightbox();
+});
+
+document.getElementById('lightbox-next').addEventListener('click', () => {
+  // Wrap around to the first image if at the end
+  _lbIndex = (_lbIndex + 1) % _lbImages.length;
+  updateLightbox();
+});
+
+// Click the dark backdrop (not the image) to close
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+});
+
+// Keyboard navigation: Escape closes, arrows navigate
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowLeft')  { _lbIndex = (_lbIndex - 1 + _lbImages.length) % _lbImages.length; updateLightbox(); }
+  if (e.key === 'ArrowRight') { _lbIndex = (_lbIndex + 1) % _lbImages.length; updateLightbox(); }
+});
+
+// ─── HISTORY ─────────────────────────────────────────────
+// Each paragraph is a string; innerHTML preserves <strong> tags
+function renderHistory(paragraphs) {
+  document.getElementById('history-text').innerHTML =
+    paragraphs.map(p => `<p>${p}</p>`).join('');
+}
+
+// ─── TIMELINE ────────────────────────────────────────────
+// Horizontal generation timeline with dot + label + year
+function renderTimeline(nodes) {
+  document.getElementById('timeline-track').innerHTML = nodes.map(node => `
+    <div class="timeline-node ${node.active ? 'active' : ''}">
+      <div class="timeline-dot">${node.dot}</div>
+      <div class="timeline-label">${node.label}</div>
+      <div class="timeline-year">${node.year}</div>
+    </div>
+  `).join('');
+}
+
+// ─── DID YOU KNOW ────────────────────────────────────────
+// Orange callout box with lightning bolt icon
+function renderDYK(text) {
+  document.getElementById('dyk-box').innerHTML = `
+    <div class="dyk-icon">⚡</div>
+    <div>
+      <div class="dyk-label">Did You Know</div>
+      <p class="dyk-text">${text}</p>
+    </div>
+  `;
+}
+
+// ─── SPECS TABLES ────────────────────────────────────────
+// Renders one table per spec group (Engine, Performance, Dimensions…)
+function renderSpecs(groups) {
+  const container = document.getElementById('specs-section');
+
+  container.innerHTML = groups.map(group => `
+    <div class="section-head reveal" style="margin-top:2.5rem;">
+      <h2>PERFORMANCE SPECS</h2>
+      <div class="section-head-line"></div>
+    </div>
+    <table class="specs-table reveal">
+      <thead>
+        <tr><th colspan="2">${group.group}</th></tr>
+      </thead>
+      <tbody>
+        ${group.rows.map(row => `
+          <tr class="${row.highlight ? 'specs-highlight' : ''}">
+            <td>${row.label}</td>
+            <td>${row.value}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `).join('');
+
+  // Only show the "PERFORMANCE SPECS" heading before the first table
+  // Remove duplicate headings by keeping only the first section-head
+  const heads = container.querySelectorAll('.section-head');
+  heads.forEach((h, i) => { if (i > 0) h.remove(); });
+}
+
+// ─── TRIM LEVELS ─────────────────────────────────────────
+// 2-column grid of trim/package cards
+function renderTrims(trims) {
+  document.getElementById('trim-cards').innerHTML = trims.map(t => `
+    <div class="trim-card">
+      <div class="trim-name">${t.name}</div>
+      <div class="trim-years">${t.years}</div>
+      <div class="trim-desc">${t.description}</div>
+    </div>
+  `).join('');
+}
+
+// ─── VARIANTS ────────────────────────────────────────────
+// Left-orange-bordered list of notable special editions
+function renderVariants(variants) {
+  document.getElementById('variants-list').innerHTML = variants.map(v => `
+    <div class="variant-item">
+      <div>
+        <div class="variant-name">${v.name}</div>
+        <div class="variant-desc">${v.description}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ─── FACTORY COLORS ──────────────────────────────────────
+// Circular swatches with color name labels
+function renderColors(colors) {
+  document.getElementById('colors-grid').innerHTML = colors.map(c => `
+    <div class="color-swatch">
+      <div class="swatch-circle" style="background:${c.hex};" title="${c.name}"></div>
+      <div class="swatch-name">${c.name}</div>
+    </div>
+  `).join('');
+}
+
+// ─── QUICK REFERENCE SIDEBAR ─────────────────────────────
+// Key-value rows in the sticky sidebar card
+function renderQuickRef(rows) {
+  document.getElementById('quick-ref-rows').innerHTML = rows.map(r => `
+    <div class="sidebar-stat-row">
+      <span class="label">${r.label}</span>
+      <span class="val ${r.highlight ? 'orange' : ''}">${r.value}</span>
+    </div>
+  `).join('');
+}
+
+// ─── RELATED CARS ────────────────────────────────────────
+// Links to other car pages in the sidebar
+function renderRelated(cars) {
+  document.getElementById('related-links').innerHTML = cars.map(c => `
+    <a href="car.html?id=${c.id}" class="related-link">
+      <div>
+        <span class="related-link-make">${c.make}</span>
+        ${c.model}
+      </div>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  `).join('');
+
+  // Re-attach transition listeners to the newly created links
+  initNav();
+}
+
+// ─── ERROR STATE ─────────────────────────────────────────
+// Hides main content and shows the "Car Not Found" message
+function showError() {
+  document.getElementById('page-transition').classList.add('loaded');
+  document.getElementById('error-state').style.display = 'block';
+
+  // Hide the hero and content sections
+  document.querySelector('.car-hero')     && (document.querySelector('.car-hero').style.display     = 'none');
+  document.querySelector('.content-layout') && (document.querySelector('.content-layout').style.display = 'none');
+  document.querySelector('.breadcrumb')   && (document.querySelector('.breadcrumb').style.display   = 'none');
+}
+
+// ─── SCROLL REVEAL ───────────────────────────────────────
+// Observes .reveal elements and adds .visible when they enter viewport
+function initScrollReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ─── NAV INIT ────────────────────────────────────────────
+// Sets up page transitions on all internal links + nav search routing
+function initNav() {
+  // ─── HAMBURGER MENU ───────────────────────────────────
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+  if (hamburger && !hamburger._bound) {
+    hamburger._bound = true;
+    hamburger.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  }
+
+  // Drawer search
+  const drawerSearch = document.getElementById('drawer-search-input');
+  if (drawerSearch && !drawerSearch._bound) {
+    drawerSearch._bound = true;
+    drawerSearch.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const q = e.target.value.trim();
+        window.location.href = q ? `browse.html?q=${encodeURIComponent(q)}` : 'browse.html';
+      }
+    });
+  }
+  // Fade-out transition before navigating away
+  document.querySelectorAll('a[href]').forEach(link => {
+    if (link._transitionBound) return; // don't double-bind
+    link._transitionBound = true;
+
+    const target = link.getAttribute('href');
+    if (!target || target.startsWith('#')) return;
+
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const overlay = document.getElementById('page-transition');
+      overlay.classList.remove('loaded');
+      setTimeout(() => { window.location.href = target; }, 350);
+    });
+  });
+
+  // Nav search bar routes to browse page with query param
+  const navInput = document.getElementById('nav-search-input');
+  if (navInput && !navInput._bound) {
+    navInput._bound = true;
+    navInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const q = e.target.value.trim();
+        window.location.href = q ? `browse.html?q=${encodeURIComponent(q)}` : 'browse.html';
+      }
+    });
+  }
+}
+</script>
+</body>
+</html>

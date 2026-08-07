@@ -1,0 +1,1879 @@
+/* ═══════════════════════════════════════════════════════
+   GARAGE ATLAS — styles.css
+   Shared stylesheet for index.html, browse.html, car.html
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── CSS VARIABLES ─────────────────────────────────────
+   Single source of truth for colors, fonts, and spacing.
+   Change a value here and it updates everywhere.
+──────────────────────────────────────────────────────── */
+:root {
+  --bg:           #0e0e0f;
+  --bg-card:      #161618;
+  --bg-lift:      #1e1e21;
+  --orange:       #f97316;
+  --orange-dim:   #c45c0e;
+  --orange-glow:  rgba(249, 115, 22, 0.18);
+  --white:        #f0ede8;
+  --muted:        #7a7870;
+  --border:       #2a2a2e;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-cond:    'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────
+   Zero out default margins/padding and set global defaults
+──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ─── PAGE TRANSITION OVERLAY ───────────────────────────
+   Full-screen overlay that fades in/out between page navigations.
+   index.html starts at opacity:0 (already visible on load).
+   browse.html and car.html start at opacity:1 then fade out.
+──────────────────────────────────────────────────────── */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+/* Used by browse/car pages to fade in on load */
+#page-transition.loaded   { opacity: 0; }
+/* Triggered before navigating away from any page */
+#page-transition.fade-out { opacity: 1; pointer-events: all; }
+
+/* ─── STICKY NAV ────────────────────────────────────────
+   Shared navigation bar across all pages.
+   index.html uses position:fixed; other pages use position:sticky.
+──────────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 64px;
+  background: rgba(14, 14, 15, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+/* Logo: icon + wordmark */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  line-height: 1;
+}
+.nav-logo-text span { color: var(--orange); }
+
+/* Nav link list */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--orange); }
+
+/* Compact search widget in the nav */
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-lift);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  transition: border-color 0.2s;
+}
+.nav-search:focus-within { border-color: var(--orange); }
+.nav-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  width: 180px;
+}
+.nav-search input::placeholder { color: var(--muted); }
+.nav-search svg { color: var(--muted); flex-shrink: 0; }
+
+/* ─── SHARED SECTION UTILITIES ──────────────────────────
+   Reusable labels and titles used on index.html
+──────────────────────────────────────────────────────── */
+section { padding: 6rem 2.5rem; }
+
+.section-label {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 3rem;
+}
+
+/* ─── SHARED CAR CARD ───────────────────────────────────
+   Used on both index.html (featured grid) and browse.html (results grid)
+──────────────────────────────────────────────────────── */
+.car-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+.car-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px var(--orange-glow);
+}
+/* Animated orange left-edge accent bar */
+.car-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--orange);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+.car-card:hover::before { transform: scaleY(1); }
+
+/* Card image placeholder — gradient + diagonal stripe texture */
+.card-img {
+  height: 160px;
+  background: linear-gradient(135deg, #1a1a1c 0%, #242428 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: rgba(249, 115, 22, 0.15);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  position: relative;
+}
+.card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(249, 115, 22, 0.03) 8px,
+    rgba(249, 115, 22, 0.03) 9px
+  );
+}
+
+.card-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Year badge (orange pill with calendar icon) */
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.card-make {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.card-model {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.card-spec {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.card-spec strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* ─── SHARED FOOTER ─────────────────────────────────────
+   Consistent footer across all pages
+──────────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.footer-logo span { color: var(--orange); }
+
+.footer-copy {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ─── SHARED ANIMATIONS ─────────────────────────────────
+   Keyframes used across all pages for reveals and loading
+──────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; width: 0; }
+  to   { opacity: 1; width: 60px; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* Scroll-reveal base state — JS adds .visible to trigger the transition */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card stagger animation used on browse.html results */
+.card-appear {
+  animation: fadeUp 0.4s ease both;
+}
+
+/* ─── ORANGE BUTTON ─────────────────────────────────────
+   Shared CTA button used on index.html spotlight section
+──────────────────────────────────────────────────────── */
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-orange:hover {
+  background: var(--orange-dim);
+  transform: translateX(2px);
+}
+
+/* ════════════════════════════════════════════════════════
+   INDEX.HTML — Landing page specific styles
+   ════════════════════════════════════════════════════════ */
+
+/* ─── HERO ──────────────────────────────────────────────
+   Full-viewport hero section with animated entrance
+──────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+/* Skewed grid background texture */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: skewY(-6deg) scale(1.2);
+  transform-origin: top left;
+}
+
+/* Large ghost "ATLAS" watermark text in the background */
+.hero-bg-text {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 20vw, 18rem);
+  color: rgba(249, 115, 22, 0.04);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Orange horizontal accent line above eyebrow text */
+.hero-line {
+  width: 60px;
+  height: 3px;
+  background: var(--orange);
+  margin: 0 auto 1.5rem;
+  opacity: 0;
+  animation: slideIn 0.6s 0.2s forwards;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  opacity: 0;
+  animation: fadeUp 0.6s 0.3s forwards;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  margin: 0.5rem 0 1rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.45s forwards;
+}
+.hero-title span { color: var(--orange); }
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.6s forwards;
+}
+
+/* Hero search bar — wider than nav search */
+.hero-search {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  width: min(560px, 90vw);
+  opacity: 0;
+  animation: fadeUp 0.7s 0.75s forwards;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.hero-search:focus-within {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-glow);
+}
+.hero-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--white);
+}
+.hero-search input::placeholder { color: var(--muted); }
+.hero-search button {
+  background: var(--orange);
+  border: none;
+  padding: 0 1.5rem;
+  height: 100%;
+  color: #fff;
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.hero-search button:hover { background: var(--orange-dim); }
+
+/* Stat strip below hero search */
+.hero-stats {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.9s forwards;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* Animated scroll indicator at bottom of hero */
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 1.2s forwards;
+}
+.scroll-cue span {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.scroll-cue-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--orange), transparent);
+  animation: pulse 1.8s infinite;
+}
+
+/* ─── FEATURED CARS (index.html) ────────────────────────
+   Max-width wrapper + header row with "View All" link
+──────────────────────────────────────────────────────── */
+.featured { max-width: 1300px; margin: 0 auto; }
+
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.featured-header a {
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  border-bottom: 1px solid var(--orange-dim);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.featured-header a:hover { color: var(--white); }
+
+/* Card grid (also used by browse.html — column count differs) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─── CATEGORIES STRIP (index.html) ─────────────────────
+   Section with alternating background
+──────────────────────────────────────────────────────── */
+.categories-section {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.categories-inner { max-width: 1300px; margin: 0 auto; }
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.category-tile {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.category-tile:hover {
+  border-color: var(--orange);
+  background: var(--orange-glow);
+}
+.category-tile-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+.category-tile-label {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── SPOTLIGHT (index.html) ────────────────────────────
+   Two-column feature card: image left, content right
+──────────────────────────────────────────────────────── */
+.spotlight-section { max-width: 1300px; margin: 0 auto; }
+
+.spotlight-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.spotlight-card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 0 60px var(--orange-glow);
+}
+.spotlight-img {
+  background: linear-gradient(135deg, #1a1a1c, #222226);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  color: rgba(249, 115, 22, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent, transparent 10px,
+    rgba(249, 115, 22, 0.03) 10px, rgba(249, 115, 22, 0.03) 11px
+  );
+}
+.spotlight-content {
+  background: var(--bg-card);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.spotlight-eyebrow {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+.spotlight-title {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+.spotlight-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.spotlight-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.spotlight-spec-label {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.spotlight-spec-val {
+  font-family: var(--font-cond);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-top: 0.1rem;
+}
+
+/* ════════════════════════════════════════════════════════
+   BROWSE.HTML — Browse/search page specific styles
+   ════════════════════════════════════════════════════════ */
+
+/* ─── PAGE HEADER (browse.html) ─────────────────────────
+   Large title block at the top of the browse page
+──────────────────────────────────────────────────────── */
+.page-header {
+  padding: 4rem 2.5rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.page-header-eyebrow {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.4rem;
+}
+.page-header-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+}
+
+/* ─── BROWSE LAYOUT (browse.html) ───────────────────────
+   Two-column layout: sidebar filters | results grid
+──────────────────────────────────────────────────────── */
+.browse-layout {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ─── SIDEBAR FILTERS (browse.html) ────────────────────
+   Sticky filter panel on the left
+──────────────────────────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 80px; /* offset below the 64px nav */
+}
+
+/* Search input inside the sidebar */
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s;
+}
+.filter-search:focus-within { border-color: var(--orange); }
+.filter-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  width: 100%;
+}
+.filter-search input::placeholder { color: var(--muted); }
+.filter-search svg { color: var(--muted); flex-shrink: 0; }
+
+/* Filter section (Make / Era / Category) */
+.filter-group { margin-bottom: 2rem; }
+.filter-group-title {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Pill-style toggle buttons for filters */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.filter-pill {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  user-select: none;
+}
+.filter-pill:hover { border-color: var(--orange); color: var(--white); }
+.filter-pill.active {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-glow);
+}
+
+/* Results count + sort row above the card grid */
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.results-count {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.results-count strong { color: var(--orange); }
+
+/* Sort dropdown */
+.sort-select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--white);
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  outline: none;
+  cursor: pointer;
+}
+.sort-select:focus { border-color: var(--orange); }
+
+/* Empty state shown when filters return no results */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--muted);
+}
+.no-results-icon { font-size: 3rem; margin-bottom: 1rem; }
+.no-results h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+/* ════════════════════════════════════════════════════════
+   CAR.HTML — Individual car entry page specific styles
+   ════════════════════════════════════════════════════════ */
+
+/* ─── BREADCRUMB (car.html) ─────────────────────────────
+   Navigation trail: Home / Browse / Make / Model / Trim
+──────────────────────────────────────────────────────── */
+.breadcrumb {
+  padding: 1.25rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--orange); }
+.breadcrumb .sep { color: var(--border); }
+.breadcrumb .current { color: var(--orange); }
+
+/* ─── CAR HERO HEADER (car.html) ────────────────────────
+   Two-column: car info/title left, image placeholder right
+──────────────────────────────────────────────────────── */
+.car-hero {
+  display: grid;
+  grid-template-columns: 1fr 640px; /* wider column gives the image room to center */
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.car-hero-info {
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+/* Gradient orange vertical line on the far left edge */
+.car-hero-info::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, var(--orange), transparent);
+}
+.car-hero-eyebrow {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+.car-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+.car-hero-sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+/* Row of quick-stat badge pills under the title */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.hero-badge {
+  background: var(--bg-lift);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.hero-badge.highlight {
+  background: rgba(249, 115, 22, 0.12);
+  border-color: rgba(249, 115, 22, 0.4);
+  color: var(--orange);
+}
+/* Car image placeholder panel — fills the full column width and
+   stretches to match the height of the info column on the left */
+.car-hero-img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: linear-gradient(135deg, #161618 0%, #1e1e22 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  color: rgba(249, 115, 22, 0.08);
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+}
+.car-hero-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent, transparent 10px,
+    rgba(249, 115, 22, 0.025) 10px, rgba(249, 115, 22, 0.025) 11px
+  );
+}
+
+/* ─── CONTENT LAYOUT (car.html) ─────────────────────────
+   Two-column: main article left, sticky sidebar right
+──────────────────────────────────────────────────────── */
+.content-layout {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ─── ARTICLE SECTIONS (car.html) ───────────────────────
+   Section headers with extending horizontal rule
+──────────────────────────────────────────────────────── */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.section-head-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* History body text */
+.history-text {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #c8c4bc;
+}
+.history-text p + p { margin-top: 1rem; }
+.history-text strong { color: var(--white); font-weight: 600; }
+
+/* ─── GENERATION TIMELINE (car.html) ────────────────────
+   Horizontal timeline with dots connected by a line
+──────────────────────────────────────────────────────── */
+.timeline { margin: 2.5rem 0; }
+
+.timeline-track {
+  position: relative;
+  display: flex;
+}
+/* Horizontal connecting line behind all dots */
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+.timeline-node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+/* Circle indicator for each timeline point */
+.timeline-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s, color 0.2s;
+}
+/* .active highlights the current generation */
+.timeline-node.active .timeline-dot {
+  border-color: var(--orange);
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--orange);
+}
+.timeline-label {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+.timeline-year {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+.timeline-node.active .timeline-label,
+.timeline-node.active .timeline-year { color: var(--white); }
+
+/* ─── SPECS TABLES (car.html) ───────────────────────────
+   Styled like a racing data printout / tech sheet
+──────────────────────────────────────────────────────── */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.5rem;
+}
+.specs-table thead tr {
+  background: rgba(249, 115, 22, 0.08);
+  border-bottom: 1px solid var(--orange-dim);
+}
+.specs-table thead th {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 0.6rem 1rem;
+  text-align: left;
+}
+.specs-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.specs-table tbody tr:hover { background: rgba(249, 115, 22, 0.04); }
+.specs-table td {
+  padding: 0.65rem 1rem;
+  font-size: 0.88rem;
+}
+.specs-table td:first-child {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  width: 45%;
+}
+.specs-table td:last-child {
+  color: var(--white);
+  font-weight: 400;
+}
+/* Highlighted rows (key performance numbers) shown in orange */
+.specs-highlight td:last-child {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+/* ─── TRIM LEVELS (car.html) ────────────────────────────
+   2-column grid of trim/package cards
+──────────────────────────────────────────────────────── */
+.trim-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.trim-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+.trim-card:hover { border-color: var(--orange); }
+.trim-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.trim-years {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.6rem;
+}
+.trim-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── VARIANTS (car.html) ───────────────────────────────
+   Left-bordered list of notable special editions / variants
+──────────────────────────────────────────────────────── */
+.variants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.variant-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange); /* orange left accent */
+  border-radius: 0 6px 6px 0;
+}
+.variant-name {
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+  min-width: 140px;
+}
+.variant-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── FACTORY COLORS (car.html) ─────────────────────────
+   Row of circular color swatches with name labels
+──────────────────────────────────────────────────────── */
+.colors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.color-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.swatch-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.swatch-circle:hover {
+  transform: scale(1.1);
+  border-color: var(--orange);
+}
+.swatch-name {
+  font-family: var(--font-cond);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  max-width: 60px;
+}
+
+/* ─── DID YOU KNOW BOX (car.html) ───────────────────────
+   Orange-tinted callout box for interesting facts
+──────────────────────────────────────────────────────── */
+.dyk-box {
+  background: rgba(249, 115, 22, 0.06);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.dyk-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.dyk-label {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.35rem;
+}
+.dyk-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #c8c4bc;
+}
+
+/* ─── RIGHT SIDEBAR — CAR PAGE (car.html) ───────────────
+   Sticky sidebar with quick-ref stats and related cars
+──────────────────────────────────────────────────────── */
+.sidebar-sticky {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Quick reference stats card */
+.sidebar-stats-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.sidebar-stats-head {
+  background: rgba(249, 115, 22, 0.08);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.sidebar-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.sidebar-stat-row:last-child { border-bottom: none; }
+.sidebar-stat-row .label {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sidebar-stat-row .val { color: var(--white); font-weight: 400; }
+.sidebar-stat-row .val.orange { color: var(--orange); font-weight: 600; }
+
+/* Related cars list card */
+.related-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.related-head {
+  background: var(--bg-lift);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.related-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  color: var(--white);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+  transition: background 0.15s, color 0.15s;
+}
+.related-link:last-child { border-bottom: none; }
+.related-link:hover {
+  background: var(--orange-glow);
+  color: var(--orange);
+}
+.related-link-make {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+.related-link svg { color: var(--muted); flex-shrink: 0; }
+.related-link:hover svg { color: var(--orange); }
+
+/* ════════════════════════════════════════════════════════
+   IMAGE SUPPORT — hero photos, card thumbs, gallery, lightbox
+   ════════════════════════════════════════════════════════ */
+
+/* ─── HERO IMAGE PANEL ──────────────────────────────────
+   When a real photo is available, .has-image replaces the
+   gradient placeholder with a full-bleed cover image.
+──────────────────────────────────────────────────────── */
+.car-hero-img.has-image {
+  padding: 0;           /* remove text padding */
+  font-size: 0;         /* hide any leftover text */
+}
+.car-hero-img.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* fill the panel, crop to fit */
+  object-position: center;
+  display: block;
+}
+
+/* Spotlight image panel — same treatment */
+.spotlight-img.has-image {
+  font-size: 0;
+  padding: 0;
+}
+.spotlight-img.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ─── CARD THUMBNAIL ────────────────────────────────────
+   When a thumb image is set via inline background-image,
+   hide the diagonal stripe texture overlay so it doesn't
+   cover the photo.
+──────────────────────────────────────────────────────── */
+.card-img[style*="background-image"]::after {
+  display: none;        /* remove stripe overlay on photo cards */
+}
+
+/* ─── GALLERY GRID ──────────────────────────────────────
+   Responsive masonry-style grid of photo thumbnails.
+   3 columns on wide screens, scales down on narrow.
+──────────────────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Individual thumbnail wrapper */
+.gallery-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;   /* consistent proportions */
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.gallery-thumb:hover {
+  border-color: var(--orange);
+  transform: scale(1.02);
+}
+
+/* The photo itself */
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery-thumb:hover img {
+  transform: scale(1.05);   /* subtle zoom on hover */
+}
+
+/* Expand icon overlay — fades in on hover */
+.gallery-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 14, 15, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: var(--white);
+}
+.gallery-thumb:hover .gallery-thumb-overlay {
+  opacity: 1;
+}
+
+/* ─── LIGHTBOX ──────────────────────────────────────────
+   Full-screen dark overlay for viewing gallery photos.
+   Hidden by default; .active makes it visible.
+──────────────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Hidden until .active is added by JS */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* The full-size photo in the lightbox */
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+
+/* Shared styles for all lightbox control buttons */
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+/* Close button — top right corner */
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+/* Prev/next arrows — vertically centered on left/right */
+.lightbox-prev {
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lightbox-next {
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Photo counter — e.g. "2 / 5" at the bottom */
+.lightbox-counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE — Hamburger nav, mobile layouts
+   Breakpoint: 768px and below = mobile/tablet
+   ════════════════════════════════════════════════════════ */
+
+/* ─── HAMBURGER BUTTON ──────────────────────────────────
+   Three-line icon button. Hidden on desktop, visible on mobile.
+   Animates into an X when .open is added by JS.
+──────────────────────────────────────────────────────── */
+.nav-hamburger {
+  display: none;           /* hidden on desktop */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+/* Animate the three lines into an X when .open */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── MOBILE NAV DRAWER ─────────────────────────────────
+   Full-width dropdown that slides down from the nav on mobile.
+   Hidden by default; .open makes it visible.
+──────────────────────────────────────────────────────── */
+.nav-drawer {
+  display: none;            /* only shown on mobile */
+  position: fixed;
+  top: 64px;                /* directly below the nav bar */
+  left: 0; right: 0;
+  background: rgba(14, 14, 15, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0;
+  z-index: 99;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+/* Each link in the drawer */
+.nav-drawer a {
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.nav-drawer a:last-of-type { border-bottom: none; }
+.nav-drawer a:hover, .nav-drawer a.active { color: var(--orange); }
+
+/* Search input inside the drawer */
+.drawer-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-lift);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.55rem 0.85rem;
+  margin-top: 1rem;
+  transition: border-color 0.2s;
+}
+.drawer-search:focus-within { border-color: var(--orange); }
+.drawer-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  width: 100%;
+}
+.drawer-search input::placeholder { color: var(--muted); }
+.drawer-search svg { color: var(--muted); flex-shrink: 0; }
+
+/* ─── MOBILE FILTER TOGGLE (browse.html) ───────────────
+   Button that shows/hides the filter sidebar on mobile.
+   Hidden on desktop where the sidebar is always visible.
+──────────────────────────────────────────────────────── */
+.filter-toggle {
+  display: none;           /* hidden on desktop */
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--white);
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.filter-toggle:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+/* ════════════════════════════════════════════════════════
+   MEDIA QUERY — 768px and below
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ─── NAV ─────────────────────────────────────────────
+     Hide desktop links and search; show hamburger instead
+  ────────────────────────────────────────────────────── */
+  .nav-links,
+  .nav-search { display: none; }
+
+  .nav-hamburger { display: flex; }
+  .nav-drawer    { display: flex; }
+
+  nav {
+    position: fixed;    /* always stick to top on mobile */
+    padding: 0 1.25rem;
+  }
+
+  /* ─── HERO (index.html) ───────────────────────────────
+     Scale down text, tighten spacing, hide scroll cue
+  ────────────────────────────────────────────────────── */
+  .hero { padding: 0 1.25rem; }
+
+  .hero-stats {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-search { width: 100%; }
+
+  .scroll-cue { display: none; }
+
+  /* ─── SECTIONS ────────────────────────────────────────
+     Reduce padding on all sections
+  ────────────────────────────────────────────────────── */
+  section { padding: 3rem 1.25rem; }
+
+  /* ─── FEATURED CARDS (index.html) ────────────────────
+     Single column on mobile
+  ────────────────────────────────────────────────────── */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ─── CATEGORY TILES (index.html) ────────────────────
+     Two columns instead of six
+  ────────────────────────────────────────────────────── */
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ─── SPOTLIGHT (index.html) ─────────────────────────
+     Stack image on top, content below
+  ────────────────────────────────────────────────────── */
+  .spotlight-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px auto;
+  }
+  .spotlight-content { padding: 1.75rem; }
+  .spotlight-specs   { grid-template-columns: 1fr 1fr; }
+
+  /* ─── FOOTER ──────────────────────────────────────────
+     Stack logo and copyright vertically
+  ────────────────────────────────────────────────────── */
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 2rem 1.25rem;
+  }
+
+  /* ─── BROWSE PAGE ─────────────────────────────────────
+     Hide sidebar by default; show filter toggle button.
+     Sidebar slides in as a full-width overlay when .open.
+  ────────────────────────────────────────────────────── */
+  .browse-layout {
+    grid-template-columns: 1fr;  /* single column */
+    padding: 1.25rem;
+    gap: 0;
+  }
+
+  .page-header { padding: 2rem 1.25rem 1.5rem; }
+
+  /* Sidebar hidden until filter toggle is tapped */
+  .sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0;
+    background: rgba(14, 14, 15, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem;
+    z-index: 90;
+    max-height: 70vh;
+    overflow-y: auto;
+    transform: translateY(-110%);  /* slide up out of view */
+    transition: transform 0.3s ease;
+  }
+  .sidebar.open {
+    transform: translateY(0);       /* slide down into view */
+  }
+
+  /* Show the filter toggle button on mobile */
+  .filter-toggle { display: flex; }
+
+  /* Browse card grid — two columns on mobile */
+  .browse-layout .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  /* ─── CAR PAGE ────────────────────────────────────────
+     Stack hero vertically, single-column content layout
+  ────────────────────────────────────────────────────── */
+
+  /* Stack hero: image on top, info below */
+  .car-hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 260px auto;
+  }
+
+  /* Image panel fills full width on mobile */
+  .car-hero-img {
+    width: 100%;
+    height: 260px;
+    order: -1;   /* move image above the title */
+  }
+
+  .car-hero-info {
+    padding: 1.5rem 1.25rem;
+  }
+  /* Hide the orange left-edge accent line on mobile */
+  .car-hero-info::before { display: none; }
+
+  /* Single column: sidebar drops below the article */
+  .content-layout {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.25rem;
+    gap: 2rem;
+  }
+
+  /* Sidebar no longer sticky on mobile */
+  .sidebar-sticky { position: static; }
+
+  /* Trim cards — single column on small screens */
+  .trim-cards { grid-template-columns: 1fr; }
+
+  /* Gallery — two columns on mobile */
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Timeline — allow wrapping on very small screens */
+  .timeline-track { flex-wrap: wrap; gap: 1rem; }
+  .timeline-track::before { display: none; } /* hide connecting line when wrapped */
+
+  /* Breadcrumb — allow wrapping */
+  .breadcrumb {
+    flex-wrap: wrap;
+    padding: 0.85rem 1.25rem;
+  }
+
+  /* Lightbox arrows moved inward on small screens */
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+}
+
+/* ════════════════════════════════════════════════════════
+   MEDIA QUERY — 480px and below (small phones)
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* Single column browse cards on very small screens */
+  .browse-layout .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery — single column on very small screens */
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  /* Spotlight specs — single column */
+  .spotlight-specs { grid-template-columns: 1fr; }
+
+  /* Hero badges wrap nicely */
+  .hero-badges { gap: 0.35rem; }
+  .hero-badge  { font-size: 0.65rem; padding: 0.25rem 0.5rem; }
+}

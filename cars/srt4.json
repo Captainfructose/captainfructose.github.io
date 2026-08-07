@@ -1,0 +1,178 @@
+{
+  "id": "srt4",
+  "make": "Dodge",
+  "model": "Neon SRT-4",
+  "abbr": "SRT-4",
+  "years": "2003–2005",
+  "era": "2000s",
+  "category": "sport",
+  "drivetrain": "FWD",
+  "engine": "2.4L Turbo I4",
+  "hp": 230,
+  "torque": 250,
+  "zero_to_sixty": "5.5",
+  "base_price": "$19,995",
+  "units_produced": "~16,000",
+
+  "images": {
+    "thumb":   "Images/srt4/thumb.jpg",
+    "hero":    "Images/srt4/hero.jpg",
+    "gallery": [
+      "Images/srt4/gallery1.jpg",
+      "Images/srt4/gallery2.jpg",
+      "Images/srt4/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Dodge · Sport Compact · 2003–2005",
+    "title": "NEON\nSRT-4",
+    "subtitle": "2003–2005 Production",
+    "image_text": "SRT-4",
+    "badges": [
+      { "label": "230 HP",           "highlight": true  },
+      { "label": "250 lb-ft",        "highlight": true  },
+      { "label": "2.4L Turbocharged","highlight": false },
+      { "label": "5-Speed Manual",   "highlight": false },
+      { "label": "FWD",              "highlight": false },
+      { "label": "~16,000 Built",    "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",   "href": "index.html"  },
+    { "label": "Browse", "href": "browse.html" },
+    { "label": "Dodge",  "href": "browse.html?make=dodge" },
+    { "label": "Neon",   "href": "browse.html?q=neon" },
+    { "label": "SRT-4",  "href": null }
+  ],
+
+  "history": [
+    "The <strong>Dodge Neon SRT-4</strong> emerged from Chrysler's Street and Racing Technology (SRT) division in 2003 as a factory-built performance compact aimed squarely at the growing sport compact tuner market. Built on the second-generation Neon platform, the SRT-4 transformed an economy car into a genuine performance machine capable of embarrassing far more expensive vehicles.",
+    "Development was led by the SRT team under engineer <strong>Dan Knott</strong>, who pushed for a high-boost turbocharged setup rather than a naturally aspirated approach. The result was a 2.4-liter turbocharged four-cylinder producing <strong>230 horsepower</strong> and <strong>250 lb-ft of torque</strong> — numbers that shocked the industry for a sub-$20,000 car.",
+    "The SRT-4 quickly earned a cult following among enthusiasts, particularly for its immense tuning potential. With basic bolt-on modifications, owners could push output well past 300 horsepower while retaining daily drivability. The car competed directly with the Honda Civic Si, Volkswagen GTI, and Subaru WRX — and frequently beat all of them on a dollar-per-horsepower basis.",
+    "Production ran from the 2003 to 2005 model years, with approximately <strong>16,000 units</strong> produced total. The car was discontinued when the Neon platform was retired, though a spiritual successor was considered for the Caliber platform before being cancelled."
+  ],
+
+  "timeline": [
+    { "dot": "GEN1", "label": "1st Gen Neon", "year": "1994–1999", "active": false },
+    { "dot": "GEN2", "label": "2nd Gen Neon", "year": "2000–2002", "active": false },
+    { "dot": "SRT",  "label": "SRT-4 Launch", "year": "2003",      "active": true  },
+    { "dot": "ACR",  "label": "ACR Package",  "year": "2004",      "active": false },
+    { "dot": "END",  "label": "Final Year",   "year": "2005",      "active": false }
+  ],
+
+  "did_you_know": "The SRT-4 was one of the first factory cars to offer a dealer-installed Stage 1 and Stage 2 upgrade kit — essentially factory-backed performance tuning. Stage 2 pushed output to <strong>260 hp</strong> with a larger turbocharger and supporting mods, all covered under warranty.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine",           "value": "2.4L DOHC Turbocharged I4 (EDV)", "highlight": true  },
+        { "label": "Displacement",     "value": "2,429 cc",                         "highlight": false },
+        { "label": "Horsepower",       "value": "230 hp @ 5,300 rpm",              "highlight": true  },
+        { "label": "Torque",           "value": "250 lb-ft @ 2,000 rpm",           "highlight": true  },
+        { "label": "Compression",      "value": "9.0:1",                            "highlight": false },
+        { "label": "Boost (stock)",    "value": "~15 psi",                          "highlight": false },
+        { "label": "Transmission",     "value": "Getrag 5-speed manual",           "highlight": false },
+        { "label": "Drivetrain",       "value": "Front-Wheel Drive (FWD)",         "highlight": false },
+        { "label": "Differential",     "value": "2003 Open, 2004-2005 LSD",       "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",         "value": "5.5 seconds",        "highlight": true  },
+        { "label": "Quarter Mile",     "value": "14.1 sec @ 100 mph", "highlight": false },
+        { "label": "Top Speed",        "value": "153 mph (governed)", "highlight": false },
+        { "label": "Lateral G",        "value": "0.84g",              "highlight": false },
+        { "label": "Braking (60–0)",   "value": "114 ft",             "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "19 mpg",          "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "28 mpg",          "highlight": false },
+        { "label": "Fuel Economy (Combined)", "value": "22 mpg",      "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight",  "value": "2,994 lbs", "highlight": false },
+        { "label": "Wheelbase",    "value": "105.0 in",  "highlight": false },
+        { "label": "Length",       "value": "174.4 in",  "highlight": false },
+        { "label": "Width",        "value": "67.4 in",   "highlight": false },
+        { "label": "Height",       "value": "55.9 in",   "highlight": false },
+        { "label": "Front Track",  "value": "57.8 in",   "highlight": false },
+        { "label": "Rear Track",   "value": "57.3 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "SRT-4 Base",
+      "years": "2003–2005",
+      "description": "The standard SRT-4 with the full performance package. Included 17\" wheels, Brembo front brakes, strut tower brace, and the 230hp turbo engine."
+    },
+    {
+      "name": "ACR Package",
+      "years": "2004–2005",
+      "description": "American Club Racer add-on. Koni adjustable shocks, front strut bar, rear sway bar, short-throw shifter, and deleted A/C + radio for weight savings."
+    },
+    {
+      "name": "Stage 1 Kit",
+      "years": "Dealer Option",
+      "description": "Factory upgrade: larger intercooler, boost controller, and ECU tune. Bumped output to approximately 250 hp. Warranty-legal when dealer-installed."
+    },
+    {
+      "name": "Stage 2 Kit",
+      "years": "Dealer Option",
+      "description": "Larger turbocharger, upgraded injectors, full retune. Produced approximately 260 hp from the factory. Rare and highly collectible today."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "SRT-4 ACR",
+      "description": "The performance-focused ACR (American Club Racer) package stripped out creature comforts in exchange for Koni suspension and chassis bracing — making it the weapon of choice for autocross and track day events."
+    },
+    {
+      "name": "Stage 2 Factory Car",
+      "description": "Extremely rare dealer-installed Stage 2 cars are considered the holy grail of SRT-4 collecting. With documented dealer installation and original paperwork, these are among the most sought-after examples."
+    },
+    {
+      "name": "Mopar Stage Kits",
+      "description": "While not a separate model, the factory Mopar Stage 1 and Stage 2 performance kits were unique in the industry — factory-backed power upgrades that maintained emissions compliance and warranty coverage."
+    }
+  ],
+
+  "colors": [
+    { "name": "Midnight Blue", "hex": "#1a2e4a" },
+    { "name": "Flame Red",     "hex": "#c0392b" },
+    { "name": "Stone White",   "hex": "#e8e4dc" },
+    { "name": "Black",         "hex": "#1c1c1e" },
+    { "name": "Graphite",      "hex": "#5a6e7a" },
+    { "name": "Solar Yellow",  "hex": "#c8a45a" },
+    { "name": "Silver",        "hex": "#b0b8c0" },
+    { "name": "Elec. Green",   "hex": "#2e4a2e" }
+  ],
+
+  "quick_ref": [
+    { "label": "Make",           "value": "Dodge",          "highlight": false },
+    { "label": "Model",          "value": "Neon SRT-4",     "highlight": false },
+    { "label": "Years",          "value": "2003–2005",      "highlight": false },
+    { "label": "Horsepower",     "value": "230 hp",         "highlight": true  },
+    { "label": "Torque",         "value": "250 lb-ft",      "highlight": true  },
+    { "label": "Engine",         "value": "2.4L Turbo I4",  "highlight": false },
+    { "label": "Transmission",   "value": "5-Speed Manual", "highlight": false },
+    { "label": "Drive",          "value": "FWD",            "highlight": false },
+    { "label": "0–60 mph",       "value": "5.5 sec",        "highlight": true  },
+    { "label": "Base Price",     "value": "$19,995",        "highlight": false },
+    { "label": "Units Produced", "value": "~16,000",        "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Mitsubishi", "model": "Lancer Evolution VIII", "id": "evo8"      },
+    { "make": "Subaru",     "model": "WRX STI",               "id": "wrxsti"    },
+    { "make": "Honda",      "model": "Civic Si (EP3)",        "id": "civicsiep3"},
+    { "make": "Volkswagen", "model": "Golf GTI Mk4",          "id": "golfgtimk4"}
+  ]
+}
