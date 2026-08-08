@@ -1,0 +1,164 @@
+{
+  "id": "wrxsti-gd",
+  "make": "Subaru",
+  "model": "WRX STI",
+  "abbr": "GD STI",
+  "years": "2004–2007",
+  "era": "2000s",
+  "category": "jdm",
+  "drivetrain": "AWD",
+  "engine": "2.5L Turbo Boxer",
+  "hp": 300,
+  "torque": 295,
+  "zero_to_sixty": "4.9",
+  "base_price": "$31,195",
+  "units_produced": "N/A",
+
+  "images": {
+    "thumb":   "Images/wrxsti/gd/thumb.jpg",
+    "hero":    "Images/wrxsti/gd/hero.jpg",
+    "gallery": [
+      "Images/wrxsti/gd/gallery1.jpg",
+      "Images/wrxsti/gd/gallery2.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Subaru · WRX STI · GD Generation · 2004–2007",
+    "title": "WRX STI\nGD",
+    "subtitle": "GD Generation · 2004–2007",
+    "image_text": "GD",
+    "badges": [
+      { "label": "300 HP",           "highlight": true  },
+      { "label": "295 lb-ft",        "highlight": true  },
+      { "label": "2.5L Turbo Boxer", "highlight": false },
+      { "label": "6-Speed Manual",   "highlight": false },
+      { "label": "AWD",              "highlight": false },
+      { "label": "US Market Debut",  "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",   "href": "index.html"              },
+    { "label": "Browse", "href": "browse.html"             },
+    { "label": "Subaru", "href": "browse.html?make=subaru" },
+    { "label": "WRX STI","href": "car.html?id=wrxsti"     },
+    { "label": "GD",     "href": null }
+  ],
+
+  "history": [
+    "The <strong>GD-chassis WRX STI</strong> was a landmark moment for Subaru in North America — the first generation of the STI officially sold in the United States. Launched for the 2004 model year, the GD STI brought the legendary rally-bred performance that Japanese and European enthusiasts had enjoyed for years to American shores for the first time.",
+    "Built on the GD platform shared with the standard WRX, the STI received a host of upgrades that set it apart: the larger <strong>EJ257 2.5-liter turbocharged flat-four</strong>, Brembo brakes, Bilstein dampers, a close-ratio 6-speed manual, and Subaru's Driver Controlled Center Differential (DCCD) system that allowed real-time adjustment of the AWD torque split.",
+    "The GD STI quickly earned a reputation as one of the finest driver's cars of its era. Its combination of raw turbocharged punch, brilliant AWD traction, and communicative chassis made it a favorite on both the street and in competition. The 2005 and 2006 models refined the package further, and the <strong>2006 STI</strong> is widely considered the sweet spot of the generation.",
+    "The GD generation concluded with the 2007 model year, making way for the GR hatchback. Today the GD STI is highly sought after by collectors and enthusiasts — particularly low-mileage examples and the rare Special Edition models produced during this era."
+  ],
+
+  "timeline": [
+    { "dot": "GC8",  "label": "1st Gen",     "year": "1994–2001", "active": false },
+    { "dot": "GD",   "label": "GD Launch",   "year": "2004",      "active": true  },
+    { "dot": "SE",   "label": "Special Ed.", "year": "2005",      "active": false },
+    { "dot": "2007", "label": "Final GD",    "year": "2007",      "active": false },
+    { "dot": "GR",   "label": "Next Gen",    "year": "2008",      "active": false }
+  ],
+
+  "did_you_know": "The GD STI's <strong>gold BBS wheels</strong> became one of the most iconic wheel designs in performance car history. The 17-inch gold-painted BBS forged alloys were standard equipment and remain a defining visual signature of the generation — so much so that aftermarket replicas are still widely sold today.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine",        "value": "2.5L DOHC Turbocharged Flat-4 (EJ257)", "highlight": true  },
+        { "label": "Displacement",  "value": "2,457 cc",                               "highlight": false },
+        { "label": "Horsepower",    "value": "300 hp @ 6,000 rpm",                    "highlight": true  },
+        { "label": "Torque",        "value": "295 lb-ft @ 4,000 rpm",                 "highlight": true  },
+        { "label": "Compression",   "value": "8.0:1",                                  "highlight": false },
+        { "label": "Boost (stock)", "value": "~14.7 psi",                              "highlight": false },
+        { "label": "Transmission",  "value": "6-speed close-ratio manual",            "highlight": false },
+        { "label": "Drivetrain",    "value": "Symmetrical AWD w/ DCCD",              "highlight": false },
+        { "label": "Wheels",        "value": "17-inch BBS forged gold alloys",        "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "4.9 seconds",        "highlight": true  },
+        { "label": "Quarter Mile",        "value": "13.6 sec @ 101 mph", "highlight": false },
+        { "label": "Top Speed",           "value": "155 mph (limited)",  "highlight": false },
+        { "label": "Lateral G",           "value": "0.91g",              "highlight": false },
+        { "label": "Braking (60–0)",      "value": "108 ft",             "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "16 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "22 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "18 mpg",             "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "3,263 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "99.4 in",   "highlight": false },
+        { "label": "Length",      "value": "174.4 in",  "highlight": false },
+        { "label": "Width",       "value": "68.5 in",   "highlight": false },
+        { "label": "Height",      "value": "55.9 in",   "highlight": false },
+        { "label": "Front Track", "value": "58.7 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "58.3 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "WRX STI",
+      "years": "2004–2007",
+      "description": "The sole trim for North America, arriving fully loaded with Brembo brakes, Bilstein dampers, gold BBS wheels, DCCD AWD, and the 300hp EJ257 engine."
+    },
+    {
+      "name": "STI Limited",
+      "years": "2005–2007",
+      "description": "Added leather seating, a sunroof, and additional interior comfort features to the standard STI performance package."
+    },
+    {
+      "name": "STI Special Edition",
+      "years": "2005",
+      "description": "Limited run of 1,000 units in WR Blue with additional interior trim and a numbered plaque. One of the most collectible GD examples today."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "2005 Special Edition",
+      "description": "A 1,000-unit limited run celebrating the STI's US debut. Exclusively in WR Blue Pearl with a numbered dash plaque and special floor mats — already a sought-after collector's piece."
+    },
+    {
+      "name": "JDM Spec C",
+      "description": "The Japan-market Spec C variant of the GD STI featured significant weight reduction through lighter glass, thinner sound deadening, and a revised intake. Never officially sold in the US but widely imported."
+    }
+  ],
+
+  "colors": [
+    { "name": "WR Blue Pearl",   "hex": "#1a3d7a" },
+    { "name": "Obsidian Black",  "hex": "#1c1c1e" },
+    { "name": "Satin White",     "hex": "#e4e2dc" },
+    { "name": "Platinum Silver", "hex": "#9aa0a6" },
+    { "name": "Regal Blue",      "hex": "#1e2f5a" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",    "value": "GD",                  "highlight": false },
+    { "label": "Make",          "value": "Subaru",              "highlight": false },
+    { "label": "Model",         "value": "WRX STI",             "highlight": false },
+    { "label": "Years",         "value": "2004–2007",           "highlight": false },
+    { "label": "Horsepower",    "value": "300 hp",              "highlight": true  },
+    { "label": "Torque",        "value": "295 lb-ft",           "highlight": true  },
+    { "label": "Engine",        "value": "2.5L Turbo Boxer",    "highlight": false },
+    { "label": "Transmission",  "value": "6-Speed Manual",      "highlight": false },
+    { "label": "Drive",         "value": "Symmetrical AWD",     "highlight": false },
+    { "label": "0–60 mph",      "value": "4.9 sec",             "highlight": true  },
+    { "label": "Base Price",    "value": "$31,195",             "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Mitsubishi", "model": "Lancer Evolution IX", "id": "evo8"    },
+    { "make": "Subaru",     "model": "WRX STI VA",          "id": "wrxsti"  },
+    { "make": "Ford",       "model": "Focus RS",            "id": "focusrs" }
+  ]
+}

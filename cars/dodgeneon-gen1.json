@@ -1,0 +1,186 @@
+{
+  "id": "dodgeneon-gen1",
+  "make": "Dodge",
+  "model": "Neon",
+  "abbr": "GEN1",
+  "years": "1994–1999",
+  "era": "1990s",
+  "category": "sport",
+  "drivetrain": "FWD",
+  "engine": "2.0L I4",
+  "hp": 150,
+  "torque": 133,
+  "zero_to_sixty": "7.8",
+  "base_price": "$12,995",
+  "units_produced": "N/A",
+
+  "parentId": "dodgeneon",
+
+  "generations": [
+    { "id": "dodgeneon-gen1", "label": "1st Gen",  "years": "1994–1999" },
+    { "id": "dodgeneon-gen2", "label": "2nd Gen",  "years": "2000–2002" },
+    { "id": "srt4",           "label": "SRT-4",    "years": "2003–2005", "link": "car.html?id=srt4" }
+  ],
+
+  "images": {
+    "thumb":   "Images/dodgeneon/gen1/thumb.jpg",
+    "hero":    "Images/dodgeneon/gen1/hero.jpg",
+    "gallery": [
+      "Images/dodgeneon/gen1/gallery1.jpg",
+      "Images/dodgeneon/gen1/gallery2.jpg",
+      "Images/dodgeneon/gen1/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Dodge · Sport Compact · 1994–1999",
+    "title": "NEON\n1ST GEN",
+    "subtitle": "PL Platform · 1994–1999",
+    "image_text": "GEN1",
+    "badges": [
+      { "label": "150 HP",          "highlight": true  },
+      { "label": "133 lb-ft",       "highlight": true  },
+      { "label": "2.0L DOHC I4",    "highlight": false },
+      { "label": "5-Speed Manual",  "highlight": false },
+      { "label": "FWD",             "highlight": false },
+      { "label": "1994 Debut",      "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",   "href": "index.html"             },
+    { "label": "Browse", "href": "browse.html"            },
+    { "label": "Dodge",  "href": "browse.html?make=dodge" },
+    { "label": "Neon",   "href": "car.html?id=dodgeneon"  },
+    { "label": "1st Gen","href": null }
+  ],
+
+  "history": [
+    "The first generation <strong>Dodge Neon</strong> arrived for the 1994 model year as Chrysler's boldest attempt to crack the import-dominated compact car market. Developed under the PL platform and co-badged as the Plymouth Neon, it was engineered from the ground up to offer import-car refinement at a domestic price point — a direct challenge to the Honda Civic and Toyota Corolla.",
+    "What made the first-gen Neon genuinely exciting was its available <strong>2.0-liter DOHC engine</strong>, producing 150 horsepower in an era when most economy cars struggled to reach 100. This high-revving four-cylinder gave the Neon real performance credentials, particularly in Sport and R/T trims equipped with a close-ratio 5-speed manual transmission.",
+    "Chrysler's \"<strong>Hi</strong>\" advertising campaign anthropomorphized the car's rounded headlights into friendly eyes, making the Neon one of the most recognizable and endearing designs of the decade. The cheerful personality translated to the driving experience — the first-gen Neon had a playfulness and agility that belied its economy car price tag.",
+    "The original Neon also introduced several features ahead of its class, including standard dual airbags, available ABS, and a sophisticated multi-link rear suspension. A coupe body style joined the sedan for 1995, broadening the lineup's appeal. Production of the first generation concluded in 1999, making way for a thoroughly revised second-generation model."
+  ],
+
+  "timeline": [
+    { "dot": "1994", "label": "Launch",       "year": "1994",      "active": true  },
+    { "dot": "CPE",  "label": "Coupe Added",  "year": "1995",      "active": false },
+    { "dot": "R/T",  "label": "R/T Arrives",  "year": "1998",      "active": false },
+    { "dot": "1999", "label": "Final Year",   "year": "1999",      "active": false },
+    { "dot": "GEN2", "label": "Next Gen",     "year": "2000",      "active": false }
+  ],
+
+  "did_you_know": "The first generation Neon was one of the <strong>first American cars to offer dual front airbags as standard equipment</strong> across the entire lineup — not just in top trims. This was a major safety selling point at a time when many competitors still offered them only as expensive options.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine (base)",  "value": "2.0L SOHC I4",                        "highlight": false },
+        { "label": "Engine (Sport)", "value": "2.0L DOHC I4",                        "highlight": true  },
+        { "label": "Displacement",   "value": "1,996 cc",                             "highlight": false },
+        { "label": "Horsepower",     "value": "132 hp (SOHC) / 150 hp (DOHC)",      "highlight": true  },
+        { "label": "Torque",         "value": "130 lb-ft (SOHC) / 133 lb-ft (DOHC)","highlight": true  },
+        { "label": "Compression",    "value": "9.8:1 (SOHC) / 9.6:1 (DOHC)",      "highlight": false },
+        { "label": "Transmission",   "value": "5-speed manual or 3-speed auto",      "highlight": false },
+        { "label": "Drivetrain",     "value": "Front-Wheel Drive (FWD)",             "highlight": false },
+        { "label": "Differential",   "value": "Open",                                 "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "7.8 sec (DOHC) / 8.8 sec (SOHC)", "highlight": true  },
+        { "label": "Quarter Mile",        "value": "15.9 sec @ 87 mph (DOHC)",         "highlight": false },
+        { "label": "Top Speed",           "value": "121 mph (DOHC)",                   "highlight": false },
+        { "label": "Lateral G",           "value": "0.78g",                            "highlight": false },
+        { "label": "Braking (60–0)",      "value": "130 ft",                           "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "29 mpg",                           "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "38 mpg",                           "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "32 mpg",                           "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "2,390 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "104.0 in",  "highlight": false },
+        { "label": "Length",      "value": "171.8 in",  "highlight": false },
+        { "label": "Width",       "value": "67.4 in",   "highlight": false },
+        { "label": "Height",      "value": "55.9 in",   "highlight": false },
+        { "label": "Front Track", "value": "57.8 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "57.3 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Neon Base",
+      "years": "1994–1999",
+      "description": "The entry-level trim with the SOHC 2.0L engine, standard cloth interior, and a no-frills approach that kept the starting price under $13,000."
+    },
+    {
+      "name": "Neon Highline",
+      "years": "1994–1999",
+      "description": "Mid-level trim adding upgraded interior trim, additional sound deadening, and a larger list of standard features over the base model."
+    },
+    {
+      "name": "Neon Sport",
+      "years": "1994–1999",
+      "description": "The performance-oriented Sport trim brought the DOHC 150hp engine, sport-tuned suspension, 15-inch alloy wheels, and a close-ratio 5-speed manual."
+    },
+    {
+      "name": "Neon R/T",
+      "years": "1998–1999",
+      "description": "Introduced for 1998, the R/T was the ultimate first-gen Neon — DOHC engine, performance suspension tuning, unique exterior badging, and the closest thing to the SRT-4 that existed at the time."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Neon Coupe",
+      "description": "A two-door coupe body style joined the sedan lineup for 1995. Sharing all mechanical components with the sedan, the coupe offered a sportier appearance and slightly stiffer body structure thanks to the reduced cabin opening."
+    },
+    {
+      "name": "Plymouth Neon",
+      "description": "An identical twin sold under the Plymouth badge through the first generation. Distinguishable only by badging and minor trim differences, it was sold alongside the Dodge version at Chrysler dealerships until Plymouth was discontinued in 2001."
+    },
+    {
+      "name": "Neon ACR",
+      "description": "The American Club Racer package available on Sport models featured Koni adjustable shocks, a strut tower brace, and stripped-out interior for reduced weight. A popular choice among autocross competitors in the late 1990s."
+    }
+  ],
+
+  "colors": [
+    { "name": "Flame Red",      "hex": "#c0392b" },
+    { "name": "Stone White",    "hex": "#e8e4dc" },
+    { "name": "Black",          "hex": "#1c1c1e" },
+    { "name": "Aqua",           "hex": "#1a7a8a" },
+    { "name": "Lemon Yellow",   "hex": "#d4c84a" },
+    { "name": "Graphite",       "hex": "#5a6e7a" },
+    { "name": "Candy Apple",    "hex": "#a02020" },
+    { "name": "Deep Amethyst",  "hex": "#4a2060" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",    "value": "1st Gen (PL)",   "highlight": false },
+    { "label": "Make",          "value": "Dodge",          "highlight": false },
+    { "label": "Model",         "value": "Neon",           "highlight": false },
+    { "label": "Years",         "value": "1994–1999",      "highlight": false },
+    { "label": "Horsepower",    "value": "132–150 hp",     "highlight": true  },
+    { "label": "Torque",        "value": "130–133 lb-ft",  "highlight": true  },
+    { "label": "Engine",        "value": "2.0L I4",        "highlight": false },
+    { "label": "Transmission",  "value": "5-Speed Manual", "highlight": false },
+    { "label": "Drive",         "value": "FWD",            "highlight": false },
+    { "label": "0–60 mph",      "value": "7.8 sec",        "highlight": true  },
+    { "label": "Base Price",    "value": "$12,995",        "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Dodge",      "model": "Neon (All Gens)", "id": "dodgeneon"  },
+    { "make": "Dodge",      "model": "Neon SRT-4",      "id": "srt4"       },
+    { "make": "Honda",      "model": "Civic (EG)",      "id": "civictyper" },
+    { "make": "Ford",       "model": "Escort",          "id": "fordescort" }
+  ]
+}

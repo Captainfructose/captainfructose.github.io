@@ -1,0 +1,193 @@
+{
+  "id": "civic-gen3",
+  "make": "Honda",
+  "model": "Civic",
+  "abbr": "GEN3",
+  "years": "1983–1987",
+  "era": "1980s",
+  "category": ["sport", "classic"],
+  "drivetrain": "FWD",
+  "engine": "1.5L I4",
+  "hp": 76,
+  "torque": 83,
+  "zero_to_sixty": "10.8",
+  "base_price": "$5,499",
+  "units_produced": "N/A",
+
+  "parentId": "civic",
+
+  "generations": [
+    { "id": "civic-gen1",  "label": "1st Gen",  "years": "1972–1979" },
+    { "id": "civic-gen2",  "label": "2nd Gen",  "years": "1979–1983" },
+    { "id": "civic-gen3",  "label": "3rd Gen",  "years": "1983–1987" },
+    { "id": "civic-gen4",  "label": "4th Gen",  "years": "1988–1991" },
+    { "id": "civic-gen5",  "label": "5th Gen",  "years": "1992–1995" },
+    { "id": "civic-gen6",  "label": "6th Gen",  "years": "1996–2000" },
+    { "id": "civic-gen7",  "label": "7th Gen",  "years": "2001–2005" },
+    { "id": "civic-gen8",  "label": "8th Gen",  "years": "2006–2011" },
+    { "id": "civic-gen9",  "label": "9th Gen",  "years": "2012–2015" },
+    { "id": "civic-gen10", "label": "10th Gen", "years": "2016–2021" },
+    { "id": "civictyper",  "label": "Type R",   "years": "2017–Pres.", "link": "car.html?id=civictyper" }
+  ],
+
+  "images": {
+    "thumb":   "Images/civic/gen3/thumb.jpg",
+    "hero":    "Images/civic/gen3/hero.jpg",
+    "gallery": [
+      "Images/civic/gen3/gallery1.jpg",
+      "Images/civic/gen3/gallery2.jpg",
+      "Images/civic/gen3/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Honda · Compact · 1983–1987",
+    "title": "CIVIC\n3RD GEN",
+    "subtitle": "AL/EC Platform · 1983–1987",
+    "image_text": "GEN3",
+    "badges": [
+      { "label": "76 HP",           "highlight": true  },
+      { "label": "83 lb-ft",        "highlight": true  },
+      { "label": "1.5L I4",         "highlight": false },
+      { "label": "5-Speed Manual",  "highlight": false },
+      { "label": "FWD",             "highlight": false },
+      { "label": "Si Introduced",   "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",    "href": "index.html"             },
+    { "label": "Browse",  "href": "browse.html"            },
+    { "label": "Honda",   "href": "browse.html?make=honda" },
+    { "label": "Civic",   "href": "car.html?id=civic"      },
+    { "label": "3rd Gen", "href": null }
+  ],
+
+  "history": [
+    "The third generation <strong>Honda Civic</strong>, introduced for 1983, marked a pivotal moment in the model's history. This was the generation where the Civic grew up — adopting a more aerodynamic, modern design language that looked genuinely contemporary rather than merely efficient. The boxy styling of the first two generations gave way to a sleeker, more angular shape that reflected the design trends of the early 1980s.",
+    "Under the hood, Honda introduced a new family of engines with improved power and refinement. The headline addition was the <strong>1.5-liter dual-carburetor engine</strong> producing 76 horsepower — a significant jump over previous offerings that gave the Civic a genuine performance character for the first time. Combined with the 5-speed manual transmission, the third-gen Civic could hold its own against much of the competition.",
+    "The most significant addition to the third-generation lineup was the introduction of the <strong>Civic Si in 1984</strong> — a high-performance variant with a tuned 1.5-liter engine, sport suspension, and a more aggressive appearance. The Si established the performance sub-brand that would eventually lead to the Type R, making this generation historically crucial to the Civic's enthusiast legacy.",
+    "Honda also introduced the <strong>CRX</strong> alongside the third-gen Civic, sharing its platform and engines. The CRX's lightweight two-seat formula and exceptional fuel economy made it an instant hit and one of the most beloved Hondas ever built. Together, the third-gen Civic and CRX cemented Honda's reputation for building cars that were simultaneously efficient, reliable, and genuinely fun to drive."
+  ],
+
+  "timeline": [
+    { "dot": "1983", "label": "Gen 3 Launch", "year": "1983",      "active": true  },
+    { "dot": "CRX",  "label": "CRX Launch",   "year": "1983",      "active": false },
+    { "dot": "Si",   "label": "Si Arrives",   "year": "1984",      "active": false },
+    { "dot": "1986", "label": "US Si Intro",  "year": "1986",      "active": false },
+    { "dot": "GEN4", "label": "Next Gen",     "year": "1988",      "active": false }
+  ],
+
+  "did_you_know": "The third-generation Civic was the first generation to offer the <strong>Civic Si</strong> performance variant, which debuted in Japan in 1984 before arriving in North America in 1986. The Si name — standing for \"Sport Injection\" — referred to its fuel-injected engine, a relative rarity on economy cars at the time and a genuine technical achievement for Honda.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine (base)",  "value": "1.3L SOHC I4",                         "highlight": false },
+        { "label": "Engine (upper)", "value": "1.5L SOHC I4 (dual carb)",             "highlight": false },
+        { "label": "Engine (Si)",    "value": "1.5L SOHC PGM-FI I4 (fuel injected)",  "highlight": true  },
+        { "label": "Displacement",   "value": "1,342 cc (1.3L) / 1,488 cc (1.5L)",    "highlight": false },
+        { "label": "Horsepower",     "value": "60 hp (1.3L) / 76 hp (1.5L) / 91 hp (Si)", "highlight": true },
+        { "label": "Torque",         "value": "73 lb-ft (1.3L) / 83 lb-ft (1.5L) / 93 lb-ft (Si)", "highlight": true },
+        { "label": "Compression",    "value": "9.2:1 (base) / 9.5:1 (Si)",           "highlight": false },
+        { "label": "Transmission",   "value": "5-speed manual or 3-speed auto",       "highlight": false },
+        { "label": "Drivetrain",     "value": "Front-Wheel Drive (FWD)",              "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "10.8 sec (1.5L) / 9.0 sec (Si)", "highlight": true  },
+        { "label": "Quarter Mile",        "value": "17.6 sec @ 80 mph (Si)",          "highlight": false },
+        { "label": "Top Speed",           "value": "112 mph (Si)",                    "highlight": false },
+        { "label": "Lateral G",           "value": "0.75g",                           "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "31 mpg",                          "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "38 mpg",                          "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "34 mpg",                          "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "1,940 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "93.7 in",   "highlight": false },
+        { "label": "Length",      "value": "150.0 in",  "highlight": false },
+        { "label": "Width",       "value": "62.4 in",   "highlight": false },
+        { "label": "Height",      "value": "52.6 in",   "highlight": false },
+        { "label": "Front Track", "value": "54.3 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "54.1 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Civic Base",
+      "years": "1983–1987",
+      "description": "The entry-level third-gen with the 1.3L engine, 5-speed manual, and the new more aerodynamic body style that looked far more modern than its predecessors."
+    },
+    {
+      "name": "Civic DX",
+      "years": "1983–1987",
+      "description": "The mid-range DX trim adding a more complete feature set including a rear wiper, upgraded audio, and improved interior materials. The most popular choice for everyday buyers."
+    },
+    {
+      "name": "Civic GL",
+      "years": "1983–1987",
+      "description": "The premium standard trim with the 1.5L dual-carburetor engine, additional comfort features, and the most refined interior available outside of the Si."
+    },
+    {
+      "name": "Civic Si",
+      "years": "1986–1987",
+      "description": "The landmark performance variant arriving in North America for 1986. Fuel-injected 1.5L engine producing 91 hp, sport suspension, unique body kit, and the Si badging that would become synonymous with Honda performance."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Civic Si",
+      "description": "The introduction of the Si to North America for 1986 was a watershed moment for Honda enthusiasts. With 91 horsepower from a fuel-injected 1.5L engine and a sport-tuned chassis, it was quick, nimble, and affordable — the first truly driver-focused Civic available in the US market."
+    },
+    {
+      "name": "Honda CRX",
+      "description": "Sharing the third-gen Civic's platform and engines, the CRX was a two-seat sports car disguised as an economy car. The CRX Si in particular — with 91 hp and a featherweight 1,900-pound curb weight — became one of the most beloved Hondas ever sold and a formative influence on an entire generation of enthusiasts."
+    },
+    {
+      "name": "Civic Wagon",
+      "description": "The practical wagon variant continued into the third generation, now offered with 4-wheel drive on some markets — an unusual feature for a compact wagon in 1983 and a genuine differentiator in the segment."
+    }
+  ],
+
+  "colors": [
+    { "name": "Torch Red",       "hex": "#b82020" },
+    { "name": "Galaxy Blue",     "hex": "#1a3a6a" },
+    { "name": "Frost White",     "hex": "#e8e6e0" },
+    { "name": "Sterling Silver", "hex": "#a8aeb4" },
+    { "name": "Black",           "hex": "#1c1c1e" },
+    { "name": "Canopy Green",    "hex": "#2a5a3a" },
+    { "name": "Sand Beige",      "hex": "#c8b890" },
+    { "name": "Horizon Blue",    "hex": "#4a7aaa" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",   "value": "3rd Gen (AL/EC)",  "highlight": false },
+    { "label": "Make",         "value": "Honda",             "highlight": false },
+    { "label": "Model",        "value": "Civic",             "highlight": false },
+    { "label": "Years",        "value": "1983–1987",         "highlight": false },
+    { "label": "Horsepower",   "value": "60–91 hp",          "highlight": true  },
+    { "label": "Torque",       "value": "73–93 lb-ft",       "highlight": true  },
+    { "label": "Engine",       "value": "1.3L / 1.5L I4",   "highlight": false },
+    { "label": "Transmission", "value": "5-Speed Manual",    "highlight": false },
+    { "label": "Drive",        "value": "FWD",               "highlight": false },
+    { "label": "0–60 mph",     "value": "9.0 sec (Si)",      "highlight": true  },
+    { "label": "Base Price",   "value": "$5,499",            "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Honda",   "model": "Civic (All Gens)", "id": "civic"      },
+    { "make": "Honda",   "model": "Civic 2nd Gen",    "id": "civic-gen2" },
+    { "make": "Honda",   "model": "Civic 4th Gen",    "id": "civic-gen4" },
+    { "make": "Toyota",  "model": "Corolla (E80)",    "id": "corolla"    }
+  ]
+}

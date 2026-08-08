@@ -1,0 +1,192 @@
+{
+  "id": "civic-gen1",
+  "make": "Honda",
+  "model": "Civic",
+  "abbr": "GEN1",
+  "years": "1972–1979",
+  "era": "1970s",
+  "category": ["sport", "classic"],
+  "drivetrain": "FWD",
+  "engine": "1.2L I4",
+  "hp": 50,
+  "torque": 59,
+  "zero_to_sixty": "14.5",
+  "base_price": "$2,150",
+  "units_produced": "N/A",
+
+  "parentId": "civic",
+
+  "generations": [
+    { "id": "civic-gen1",  "label": "1st Gen",  "years": "1972–1979" },
+    { "id": "civic-gen2",  "label": "2nd Gen",  "years": "1979–1983" },
+    { "id": "civic-gen3",  "label": "3rd Gen",  "years": "1983–1987" },
+    { "id": "civic-gen4",  "label": "4th Gen",  "years": "1988–1991" },
+    { "id": "civic-gen5",  "label": "5th Gen",  "years": "1992–1995" },
+    { "id": "civic-gen6",  "label": "6th Gen",  "years": "1996–2000" },
+    { "id": "civic-gen7",  "label": "7th Gen",  "years": "2001–2005" },
+    { "id": "civic-gen8",  "label": "8th Gen",  "years": "2006–2011" },
+    { "id": "civic-gen9",  "label": "9th Gen",  "years": "2012–2015" },
+    { "id": "civic-gen10", "label": "10th Gen", "years": "2016–2021" },
+    { "id": "civictyper",  "label": "Type R",   "years": "2017–Pres.", "link": "car.html?id=civictyper" }
+  ],
+
+  "images": {
+    "thumb":   "Images/civic/gen1/thumb.jpg",
+    "hero":    "Images/civic/gen1/hero.jpg",
+    "gallery": [
+      "Images/civic/gen1/gallery1.jpg",
+      "Images/civic/gen1/gallery2.jpg",
+      "Images/civic/gen1/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Honda · Compact · 1972–1979",
+    "title": "CIVIC\n1ST GEN",
+    "subtitle": "SB1/SB2 Platform · 1972–1979",
+    "image_text": "GEN1",
+    "badges": [
+      { "label": "50 HP",          "highlight": true  },
+      { "label": "59 lb-ft",       "highlight": true  },
+      { "label": "1.2L I4",        "highlight": false },
+      { "label": "4-Speed Manual", "highlight": false },
+      { "label": "FWD",            "highlight": false },
+      { "label": "1972 Debut",     "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",    "href": "index.html"            },
+    { "label": "Browse",  "href": "browse.html"           },
+    { "label": "Honda",   "href": "browse.html?make=honda"},
+    { "label": "Civic",   "href": "car.html?id=civic"     },
+    { "label": "1st Gen", "href": null }
+  ],
+
+  "history": [
+    "The first generation <strong>Honda Civic</strong> arrived in North America in 1972 as one of the most significant automobiles in automotive history. At a time when the American market was dominated by large, thirsty V8-powered cars, the Civic offered something radical: a lightweight, front-wheel-drive compact with a transversely mounted engine that delivered exceptional fuel economy without sacrificing reliability or driving enjoyment.",
+    "Honda's timing proved impeccable. The <strong>1973 oil crisis</strong> sent American consumers scrambling for fuel-efficient alternatives, and the Civic was perfectly positioned to capitalize. Its 1.2-liter four-cylinder engine, while modest by any performance measure, delivered real-world fuel economy that domestic manufacturers couldn't match — reportedly achieving over 40 miles per gallon in careful driving.",
+    "What made the first-gen Civic remarkable wasn't raw performance but engineering innovation. Honda's <strong>CVCC (Compound Vortex Controlled Combustion)</strong> engine, introduced in 1975, was the first to meet the strict U.S. Clean Air Act emissions standards without requiring a catalytic converter — a genuine engineering breakthrough that demonstrated Honda's technical capabilities to the world.",
+    "The first generation Civic established Honda as a serious global automaker and laid the philosophical foundation for everything that followed. Its emphasis on efficiency, reliability, and value for money created a template that the Civic has followed for over 50 years — making the humble first-gen one of the most historically significant compact cars ever built."
+  ],
+
+  "timeline": [
+    { "dot": "1972", "label": "US Launch",     "year": "1972",      "active": true  },
+    { "dot": "CVCC", "label": "CVCC Engine",   "year": "1975",      "active": false },
+    { "dot": "HBK",  "label": "Hatch Added",   "year": "1976",      "active": false },
+    { "dot": "1979", "label": "Final Year",    "year": "1979",      "active": false },
+    { "dot": "GEN2", "label": "Next Gen",      "year": "1979",      "active": false }
+  ],
+
+  "did_you_know": "The first-gen Civic's <strong>CVCC engine was so clean</strong> that Honda sent a letter to the U.S. Senate in 1972 — before the car even launched — claiming it could meet the 1975 Clean Air Act standards that automakers like GM, Ford, and Chrysler were lobbying Congress to delay. Honda was right, and it changed the industry.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine (base)",  "value": "1.2L SOHC I4",                         "highlight": true  },
+        { "label": "Engine (CVCC)",  "value": "1.5L CVCC SOHC I4 (1975+)",            "highlight": false },
+        { "label": "Displacement",   "value": "1,169 cc (base) / 1,488 cc (CVCC)",    "highlight": false },
+        { "label": "Horsepower",     "value": "50 hp (base) / 53 hp (CVCC)",          "highlight": true  },
+        { "label": "Torque",         "value": "59 lb-ft (base) / 68 lb-ft (CVCC)",    "highlight": true  },
+        { "label": "Compression",    "value": "8.2:1",                                  "highlight": false },
+        { "label": "Transmission",   "value": "4-speed manual or 2-speed Hondamatic", "highlight": false },
+        { "label": "Drivetrain",     "value": "Front-Wheel Drive (FWD)",              "highlight": false },
+        { "label": "Differential",   "value": "Open",                                   "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "14.5 seconds",       "highlight": true  },
+        { "label": "Quarter Mile",        "value": "19.8 sec @ 68 mph",  "highlight": false },
+        { "label": "Top Speed",           "value": "87 mph",             "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "30 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "39 mpg",             "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "33 mpg",             "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "1,500 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "86.6 in",   "highlight": false },
+        { "label": "Length",      "value": "139.8 in",  "highlight": false },
+        { "label": "Width",       "value": "59.1 in",   "highlight": false },
+        { "label": "Height",      "value": "52.6 in",   "highlight": false },
+        { "label": "Front Track", "value": "51.0 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "50.2 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Civic Base",
+      "years": "1972–1979",
+      "description": "The entry-level Civic in two-door hatchback form with the 1.2L engine, 4-speed manual, and a spartan but functional interior focused entirely on efficiency and value."
+    },
+    {
+      "name": "Civic 1500 GL",
+      "years": "1975–1979",
+      "description": "The top-tier trim featuring the CVCC 1.5L engine, upgraded interior with additional sound deadening, and a more complete feature set including a rear defroster and upgraded seats."
+    },
+    {
+      "name": "Civic CVCC",
+      "years": "1975–1979",
+      "description": "The landmark CVCC-equipped variant that proved a small engine could meet strict emissions standards without sacrificing reliability. Available in sedan and hatchback body styles."
+    },
+    {
+      "name": "Civic Wagon",
+      "years": "1979",
+      "description": "A practical station wagon variant introduced in the final year of the first generation, previewing Honda's expansion of the Civic into multiple body styles in subsequent generations."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Civic Hatchback",
+      "description": "The iconic two-door hatchback that defined the first-gen Civic's image. Its practical rear hatch, light weight, and tossable handling made it a favorite among economy-minded enthusiasts despite its modest power output."
+    },
+    {
+      "name": "Civic Sedan",
+      "description": "A more formal four-door sedan variant offering greater practicality for families. Less sporty in appearance than the hatchback but mechanically identical, it broadened the Civic's appeal considerably."
+    },
+    {
+      "name": "Honda Accord (Successor Spirit)",
+      "description": "While not a Civic variant, the Honda Accord was introduced in 1976 as a larger sibling to the first-gen Civic, sharing its front-wheel-drive philosophy and CVCC engine technology — a direct product of the Civic's success."
+    }
+  ],
+
+  "colors": [
+    { "name": "Vega Yellow",    "hex": "#c8b832" },
+    { "name": "Granada Red",    "hex": "#a02020" },
+    { "name": "Bali Blue",      "hex": "#2a5a8a" },
+    { "name": "Phoenix Orange", "hex": "#c86420" },
+    { "name": "Antigua Green",  "hex": "#2a6a3a" },
+    { "name": "Ivory",          "hex": "#e8e4d4" },
+    { "name": "Black",          "hex": "#1c1c1e" },
+    { "name": "Silver",         "hex": "#a8aeb4" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",    "value": "1st Gen (SB1/SB2)", "highlight": false },
+    { "label": "Make",          "value": "Honda",              "highlight": false },
+    { "label": "Model",         "value": "Civic",              "highlight": false },
+    { "label": "Years",         "value": "1972–1979",          "highlight": false },
+    { "label": "Horsepower",    "value": "50–53 hp",           "highlight": true  },
+    { "label": "Torque",        "value": "59–68 lb-ft",        "highlight": true  },
+    { "label": "Engine",        "value": "1.2L / 1.5L I4",    "highlight": false },
+    { "label": "Transmission",  "value": "4-Speed Manual",     "highlight": false },
+    { "label": "Drive",         "value": "FWD",                "highlight": false },
+    { "label": "0–60 mph",      "value": "~14.5 sec",          "highlight": true  },
+    { "label": "Base Price",    "value": "$2,150",             "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Honda",   "model": "Civic (All Gens)", "id": "civic"       },
+    { "make": "Honda",   "model": "Civic Type R",     "id": "civictyper"  },
+    { "make": "Toyota",  "model": "Corolla (E20)",    "id": "corolla"     },
+    { "make": "VW",      "model": "Golf Mk1",         "id": "golfmk1"     }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "id": "civic",
+  "make": "Honda",
+  "model": "Civic",
+  "abbr": "CIVIC",
+  "years": "1972–Present",
+  "era": "1970s",
+  "category": ["sport", "classic"],
+  "drivetrain": "FWD",
+  "engine": "Various",
+  "hp": 50,
+  "torque": 59,
+  "zero_to_sixty": "N/A",
+  "base_price": "$2,150",
+  "units_produced": "N/A",
+
+  "generations": [
+    { "id": "civic-gen1",  "label": "1st Gen",  "years": "1972–1979" },
+    { "id": "civic-gen2",  "label": "2nd Gen",  "years": "1979–1983" },
+    { "id": "civic-gen3",  "label": "3rd Gen",  "years": "1983–1987" },
+    { "id": "civic-gen4",  "label": "4th Gen",  "years": "1988–1991" },
+    { "id": "civic-gen5",  "label": "5th Gen",  "years": "1992–1995" },
+    { "id": "civic-gen6",  "label": "6th Gen",  "years": "1996–2000" },
+    { "id": "civic-gen7",  "label": "7th Gen",  "years": "2001–2005" },
+    { "id": "civic-gen8",  "label": "8th Gen",  "years": "2006–2011" },
+    { "id": "civic-gen9",  "label": "9th Gen",  "years": "2012–2015" },
+    { "id": "civic-gen10", "label": "10th Gen", "years": "2016–2021" },
+    { "id": "civictyper",  "label": "Type R",   "years": "2017–Pres.", "link": "car.html?id=civictyper" }
+  ],
+
+  "images": {
+    "thumb":   "Images/civic/thumb.jpg",
+    "hero":    "Images/civic/hero.jpg",
+    "gallery": [
+      "Images/civic/gallery1.jpg",
+      "Images/civic/gallery2.jpg",
+      "Images/civic/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Honda · Compact · 1972–Present",
+    "title": "HONDA\nCIVIC",
+    "subtitle": "1972–Present · 11 Generations",
+    "image_text": "CIVIC",
+    "badges": [
+      { "label": "11 Generations",   "highlight": true  },
+      { "label": "50+ Years",        "highlight": true  },
+      { "label": "FWD",              "highlight": false },
+      { "label": "1972 Debut",       "highlight": false },
+      { "label": "Type R Flagship",  "highlight": false },
+      { "label": "Global Icon",      "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",   "href": "index.html"             },
+    { "label": "Browse", "href": "browse.html"            },
+    { "label": "Honda",  "href": "browse.html?make=honda" },
+    { "label": "Civic",  "href": null }
+  ],
+
+  "history": [
+    "The <strong>Honda Civic</strong> is one of the most important and enduring automobiles in automotive history. Introduced in 1972, it has spanned eleven generations over more than fifty years, consistently setting benchmarks for fuel efficiency, reliability, and value while evolving from a humble economy car into a sophisticated compact that has spawned legendary performance variants.",
+    "Honda launched the Civic into a world that was about to change dramatically. The <strong>1973 oil crisis</strong> validated every decision Honda made with the Civic — its lightweight construction, front-wheel-drive layout, and efficient four-cylinder engine were exactly what a suddenly fuel-conscious world needed. While American manufacturers scrambled to downsize their products, the Civic was already there.",
+    "Over the decades the Civic grew in size, sophistication, and performance. The <strong>Si and Type R performance variants</strong> transformed it from a pure economy car into an enthusiast icon, with the Type R earning multiple Nürburgring front-wheel-drive lap records and cementing the Civic's place in performance car history. Each generation brought new technology while retaining the core values of the original.",
+    "Today the Civic stands as Honda's best-selling model globally and one of the best-selling cars of all time. From the 50-horsepower original to the 316-horsepower Type R, the Civic's range encompasses more than six decades of automotive evolution — making it one of the most compelling nameplates in the history of the automobile."
+  ],
+
+  "timeline": [
+    { "dot": "GEN1", "label": "1st Gen",   "year": "1972",      "active": false },
+    { "dot": "EF",   "label": "EF Era",    "year": "1988",      "active": false },
+    { "dot": "EG",   "label": "EG/EK Era", "year": "1992",      "active": false },
+    { "dot": "FD",   "label": "8th Gen",   "year": "2006",      "active": false },
+    { "dot": "FK8",  "label": "Type R US", "year": "2017",      "active": false }
+  ],
+
+  "did_you_know": "The Honda Civic is one of the <strong>best-selling cars of all time</strong>, with over 27 million units sold worldwide across its eleven generations. In many years it has ranked as the best-selling car in Canada and has consistently placed in the top five in the United States — a remarkable achievement for a model that started as a niche economy import.",
+
+  "specs": [
+    {
+      "group": "Model Range Overview",
+      "rows": [
+        { "label": "Production Start",  "value": "1972",                         "highlight": false },
+        { "label": "Generations",       "value": "11 (and counting)",            "highlight": true  },
+        { "label": "Body Styles",       "value": "Hatchback, Sedan, Coupe, Wagon, Si, Type R", "highlight": false },
+        { "label": "Engine Range",      "value": "1.2L I4 to 2.0L Turbo I4",   "highlight": false },
+        { "label": "Power Range",       "value": "50 hp (Gen 1) to 316 hp (Type R)", "highlight": true  },
+        { "label": "Drivetrain",        "value": "FWD across all generations",  "highlight": false },
+        { "label": "Global Sales",      "value": "27+ million units",           "highlight": true  }
+      ]
+    },
+    {
+      "group": "Notable Milestones",
+      "rows": [
+        { "label": "1975 CVCC Engine",  "value": "First engine to meet Clean Air Act without catalytic converter", "highlight": false },
+        { "label": "1984 CRX",          "value": "High-performance Civic derivative introduced",                  "highlight": false },
+        { "label": "1992 Civic Si",     "value": "High-revving VTEC engine introduced to North America",         "highlight": false },
+        { "label": "1997 Type R (EK9)", "value": "First Type R sold outside Japan",                              "highlight": false },
+        { "label": "2017 Type R (FK8)", "value": "First Type R officially sold in North America",                "highlight": true  },
+        { "label": "2023 Type R (FL5)", "value": "Set FWD Nürburgring production car record",                   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Civic Base / LX",
+      "years": "1972–Present",
+      "description": "The entry-level Civic in each generation — consistently offering exceptional value, reliability, and fuel economy at an accessible price point across all eleven generations."
+    },
+    {
+      "name": "Civic EX / Sport",
+      "years": "Various",
+      "description": "The mid-tier trim across multiple generations, typically adding a sunroof, upgraded audio, alloy wheels, and in some eras a more powerful engine variant."
+    },
+    {
+      "name": "Civic Si",
+      "years": "1986–Present",
+      "description": "The performance-oriented Si trim introduced Honda's high-revving VTEC technology to North America and remains the driver's choice in the standard Civic lineup today."
+    },
+    {
+      "name": "Civic Type R",
+      "years": "1997–Present",
+      "description": "The ultimate Civic — a dedicated performance model with race-bred hardware, multiple Nürburgring records, and the most powerful front-wheel-drive production car sold in many markets."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Honda CRX",
+      "description": "A lightweight two-seat derivative of the second and third generation Civic, the CRX became a beloved performance icon in its own right — particularly the fuel-sipping CRX HF and the sporty CRX Si."
+    },
+    {
+      "name": "Civic Type R",
+      "description": "Honda's ultimate Civic expression, with generations spanning from the EK9 in 1997 to the current FL5. The FK8 and FL5 North American variants broke the front-wheel-drive Nürburgring production car record twice."
+    },
+    {
+      "name": "Civic Si",
+      "description": "The North American performance Civic, introduced in 1986 and continuing today. Best known for its high-revving naturally aspirated engines in the EG, EK, and EP3 generations before moving to forced induction."
+    }
+  ],
+
+  "colors": [
+    { "name": "Sonic Grey",      "hex": "#7a7e84" },
+    { "name": "Rallye Red",      "hex": "#c0272d" },
+    { "name": "Lunar Silver",    "hex": "#a8aeb4" },
+    { "name": "Crystal Black",   "hex": "#1c1c1e" },
+    { "name": "Boost Blue",      "hex": "#1a4070" },
+    { "name": "Platinum White",  "hex": "#e8e6e0" }
+  ],
+
+  "quick_ref": [
+    { "label": "Make",           "value": "Honda",            "highlight": false },
+    { "label": "Model",          "value": "Civic",            "highlight": false },
+    { "label": "Production",     "value": "1972–Present",     "highlight": false },
+    { "label": "Generations",    "value": "11",               "highlight": true  },
+    { "label": "Power Range",    "value": "50–316 hp",        "highlight": true  },
+    { "label": "Drivetrain",     "value": "FWD",              "highlight": false },
+    { "label": "Global Sales",   "value": "27M+ units",       "highlight": true  },
+    { "label": "Top Variant",    "value": "Type R (FL5)",     "highlight": false },
+    { "label": "Top Variant HP", "value": "315 hp",           "highlight": false },
+    { "label": "Origin",         "value": "Japan",            "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Honda",   "model": "Civic Type R",  "id": "civictyper" },
+    { "make": "Toyota",  "model": "Corolla",       "id": "corolla"    },
+    { "make": "VW",      "model": "Golf",          "id": "golf"       },
+    { "make": "Ford",    "model": "Focus",         "id": "focus"      }
+  ]
+}

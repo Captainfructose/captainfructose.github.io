@@ -90,6 +90,18 @@
   <div class="car-hero-img"     id="hero-img"></div>
 </div>
 
+<!-- ─── GENERATION TABS ──────────────────────────────────
+     Only rendered if the car JSON has a "generations" array.
+     Clicking a tab fetches that generation's JSON and swaps
+     all the page content without a full page reload.
+─────────────────────────────────────────────────────── -->
+<div class="gen-tabs-bar" id="gen-tabs-bar" style="display:none;">
+  <div class="gen-tabs-inner">
+    <span class="gen-tabs-label">Generation</span>
+    <div class="gen-tabs" id="gen-tabs"></div>
+  </div>
+</div>
+
 <!-- Main two-column layout: article | sidebar -->
 <div class="content-layout">
 
@@ -301,19 +313,20 @@ function renderAll(car) {
   // Update browser tab title
   document.title = `${car.years} ${car.make} ${car.model} — Garage Atlas`;
 
-  updateMeta(car);                          // SEO + Open Graph tags
+  updateMeta(car);
   renderBreadcrumb(car.breadcrumb);
-  renderHero(car.hero, car.images);       // images passed for hero photo
+  renderHero(car.hero, car.images);
   renderHistory(car.history);
   renderTimeline(car.timeline);
   renderDYK(car.did_you_know);
   renderSpecs(car.specs);
   renderTrims(car.trims);
   renderVariants(car.variants);
-  renderGallery(car.images);              // gallery section
+  renderGallery(car.images);
   renderColors(car.colors);
   renderQuickRef(car.quick_ref);
-  renderRelated(car.related, car.images); // thumb passed for related cards
+  renderRelated(car.related, car.images);
+  renderGenerationTabs(car.generations, car);
 
   // Fade in the page now that content is ready
   document.getElementById('page-transition').classList.add('loaded');
@@ -323,6 +336,69 @@ function renderAll(car) {
 
   // Wire up nav search and page transition links
   initNav();
+}
+
+// ─── GENERATION TABS ─────────────────────────────────────
+// Renders the tab strip if the car JSON has a "generations"
+// array. Each tab navigates to its own dedicated page.
+// The Overview tab links back to the parent model page.
+// The currently active tab is highlighted based on the
+// current page's car ID.
+function renderGenerationTabs(generations, baseCar) {
+  const bar  = document.getElementById('gen-tabs-bar');
+  const tabs = document.getElementById('gen-tabs');
+
+  // No generations defined — hide the tab bar and exit
+  if (!generations || generations.length === 0) {
+    bar.style.display = 'none';
+    return;
+  }
+
+  bar.style.display = 'block';
+
+  // Determine the overview link — if this is a generation page,
+  // Overview links back to the parent model; otherwise stays on this page
+  const overviewHref = baseCar.parentId
+    ? `car.html?id=${baseCar.parentId}`
+    : null;
+
+  // Build tab buttons — Overview first, then one per generation
+  tabs.innerHTML = `
+    <button class="gen-tab ${!baseCar.parentId ? 'active' : ''}"
+      ${overviewHref ? `data-href="${overviewHref}"` : ''}>
+      Overview
+    </button>
+    ${generations.map(gen => {
+      // Highlight the tab whose id matches the current page's car id
+      const isActive = gen.id === carId;
+      const href     = gen.link || `car.html?id=${gen.id}`;
+      return `
+        <button class="gen-tab ${isActive ? 'active' : ''}"
+          data-href="${href}"
+          data-label="${gen.label}">
+          ${gen.label}
+          <span class="gen-tab-years">${gen.years}</span>
+        </button>
+      `;
+    }).join('')}
+  `;
+
+  // Wire up click handlers for each tab
+  tabs.querySelectorAll('.gen-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const href = tab.dataset.href;
+
+      if (href) {
+        // Navigate to the tab's page with a smooth transition
+        const overlay = document.getElementById('page-transition');
+        overlay.classList.remove('loaded');
+        setTimeout(() => { window.location.href = href; }, 350);
+        return;
+      }
+
+      // Overview tab with no href — already on the overview page, do nothing
+    });
+  });
 }
 
 // ─── UPDATE META TAGS ────────────────────────────────────

@@ -1,0 +1,195 @@
+{
+  "id": "civic-gen4",
+  "make": "Honda",
+  "model": "Civic",
+  "abbr": "GEN4",
+  "years": "1988–1991",
+  "era": "1980s",
+  "category": ["sport", "classic"],
+  "drivetrain": "FWD",
+  "engine": "1.5L I4",
+  "hp": 92,
+  "torque": 89,
+  "zero_to_sixty": "9.2",
+  "base_price": "$6,895",
+  "units_produced": "N/A",
+
+  "parentId": "civic",
+
+  "generations": [
+    { "id": "civic-gen1",  "label": "1st Gen",  "years": "1972–1979" },
+    { "id": "civic-gen2",  "label": "2nd Gen",  "years": "1979–1983" },
+    { "id": "civic-gen3",  "label": "3rd Gen",  "years": "1983–1987" },
+    { "id": "civic-gen4",  "label": "4th Gen",  "years": "1988–1991" },
+    { "id": "civic-gen5",  "label": "5th Gen",  "years": "1992–1995" },
+    { "id": "civic-gen6",  "label": "6th Gen",  "years": "1996–2000" },
+    { "id": "civic-gen7",  "label": "7th Gen",  "years": "2001–2005" },
+    { "id": "civic-gen8",  "label": "8th Gen",  "years": "2006–2011" },
+    { "id": "civic-gen9",  "label": "9th Gen",  "years": "2012–2015" },
+    { "id": "civic-gen10", "label": "10th Gen", "years": "2016–2021" },
+    { "id": "civictyper",  "label": "Type R",   "years": "2017–Pres.", "link": "car.html?id=civictyper" }
+  ],
+
+  "images": {
+    "thumb":   "Images/civic/gen4/thumb.jpg",
+    "hero":    "Images/civic/gen4/hero.jpg",
+    "gallery": [
+      "Images/civic/gen4/gallery1.jpg",
+      "Images/civic/gen4/gallery2.jpg",
+      "Images/civic/gen4/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Honda · Compact · 1988–1991",
+    "title": "CIVIC\n4TH GEN",
+    "subtitle": "EF Platform · 1988–1991",
+    "image_text": "GEN4",
+    "badges": [
+      { "label": "92 HP",           "highlight": true  },
+      { "label": "89 lb-ft",        "highlight": true  },
+      { "label": "1.5L I4",         "highlight": false },
+      { "label": "5-Speed Manual",  "highlight": false },
+      { "label": "FWD",             "highlight": false },
+      { "label": "EF Platform",     "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",    "href": "index.html"             },
+    { "label": "Browse",  "href": "browse.html"            },
+    { "label": "Honda",   "href": "browse.html?make=honda" },
+    { "label": "Civic",   "href": "car.html?id=civic"      },
+    { "label": "4th Gen", "href": null }
+  ],
+
+  "history": [
+    "The fourth generation <strong>Honda Civic</strong>, built on the EF platform, arrived for 1988 as a significant leap forward in size, refinement, and performance. This was the generation where the Civic truly shed its economy-car-only reputation and emerged as a genuinely well-rounded compact car that could compete with the best in its class on nearly every metric.",
+    "Honda substantially revised the engine lineup for the fourth generation, introducing the <strong>D-series family of engines</strong> that would underpin Civic performance for over a decade. The top-spec 1.6-liter unit in the Si produced 108 horsepower — a remarkable figure for a naturally aspirated 1.6-liter engine in 1988 — while the base 1.5-liter offered improved refinement over its predecessor.",
+    "The fourth generation also marked the maturation of the <strong>Civic Si</strong> as a genuine performance car. With 108 horsepower, a close-ratio 5-speed, and a chassis tuned for driver involvement, the EF Si was quick, communicative, and rewarding in a way that few economy cars of the era could match. Its double-wishbone front suspension — borrowed from Honda's sports car program — gave it handling that embarrassed many dedicated sports cars.",
+    "The CRX continued alongside the fourth-gen Civic, now in its second generation and more capable than ever. The <strong>CRX Si</strong> with the same 108-horsepower engine and a sub-2,000-pound curb weight was a genuine sports car bargain that attracted a devoted following. Together, the EF Civic and CRX defined a generation of Honda enthusiasm that continues to resonate deeply with collectors today."
+  ],
+
+  "timeline": [
+    { "dot": "1988", "label": "EF Launch",    "year": "1988",      "active": true  },
+    { "dot": "DSER", "label": "D-Series Eng.","year": "1988",      "active": false },
+    { "dot": "Si",   "label": "Si 108hp",     "year": "1988",      "active": false },
+    { "dot": "CRX",  "label": "CRX Si Peak",  "year": "1989",      "active": false },
+    { "dot": "GEN5", "label": "Next Gen",     "year": "1992",      "active": false }
+  ],
+
+  "did_you_know": "The fourth-gen Civic Si used a <strong>double-wishbone front suspension</strong> — the same layout found on Honda's NSX supercar — rather than the cheaper strut suspension used by virtually every other economy car of the era. This gave the EF Si handling characteristics that were genuinely sports-car-like and made it a dominant force in autocross competition throughout the late 1980s and early 1990s.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine (base)",  "value": "1.5L SOHC D15B2 I4",                   "highlight": false },
+        { "label": "Engine (Si)",    "value": "1.6L SOHC D16A6 I4",                   "highlight": true  },
+        { "label": "Displacement",   "value": "1,488 cc (base) / 1,590 cc (Si)",       "highlight": false },
+        { "label": "Horsepower",     "value": "92 hp (1.5L) / 108 hp (Si)",           "highlight": true  },
+        { "label": "Torque",         "value": "89 lb-ft (1.5L) / 100 lb-ft (Si)",     "highlight": true  },
+        { "label": "Compression",    "value": "9.2:1 (base) / 9.5:1 (Si)",           "highlight": false },
+        { "label": "Fuel System",    "value": "Carburetor (base) / PGM-FI (Si)",      "highlight": false },
+        { "label": "Transmission",   "value": "5-speed manual or 4-speed auto",        "highlight": false },
+        { "label": "Drivetrain",     "value": "Front-Wheel Drive (FWD)",              "highlight": false },
+        { "label": "Front Susp.",    "value": "Double-wishbone (Si) / Strut (base)",  "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "9.2 sec (base) / 8.1 sec (Si)", "highlight": true  },
+        { "label": "Quarter Mile",        "value": "16.4 sec @ 84 mph (Si)",         "highlight": false },
+        { "label": "Top Speed",           "value": "120 mph (Si)",                   "highlight": false },
+        { "label": "Lateral G",           "value": "0.81g (Si)",                     "highlight": false },
+        { "label": "Braking (60–0)",      "value": "125 ft",                         "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "30 mpg",                         "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "36 mpg",                         "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "32 mpg",                         "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "2,025 lbs (Si)", "highlight": false },
+        { "label": "Wheelbase",   "value": "98.4 in",        "highlight": false },
+        { "label": "Length",      "value": "160.2 in",       "highlight": false },
+        { "label": "Width",       "value": "65.9 in",        "highlight": false },
+        { "label": "Height",      "value": "52.6 in",        "highlight": false },
+        { "label": "Front Track", "value": "56.5 in",        "highlight": false },
+        { "label": "Rear Track",  "value": "56.1 in",        "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Civic DX",
+      "years": "1988–1991",
+      "description": "The base DX trim with the 1.5L carburetor engine, strut front suspension, and the essentials — a practical and reliable daily driver at an accessible price."
+    },
+    {
+      "name": "Civic LX",
+      "years": "1988–1991",
+      "description": "The mid-range LX added air conditioning, power steering, upgraded audio, and improved interior materials over the DX while keeping the 1.5L engine."
+    },
+    {
+      "name": "Civic EX",
+      "years": "1988–1991",
+      "description": "The top standard trim with the fuel-injected 1.6L engine, sunroof, alloy wheels, and a more complete feature set — the sweet spot of the non-Si lineup."
+    },
+    {
+      "name": "Civic Si",
+      "years": "1988–1991",
+      "description": "The performance flagship with the 108hp fuel-injected 1.6L engine, double-wishbone front suspension, close-ratio 5-speed, sport seats, and a body kit that set it apart visually and dynamically."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Civic Si (EF)",
+      "description": "The EF Si remains one of the most celebrated Civics ever built. Its combination of a willing 108hp engine, double-wishbone suspension geometry, precise steering, and light weight created a driving experience that rivaled dedicated sports cars — at economy car prices."
+    },
+    {
+      "name": "Honda CRX Si",
+      "description": "The second-generation CRX sharing the EF platform produced an almost mythical driving machine. At under 2,000 pounds with 108 horsepower, the CRX Si offered a power-to-weight ratio that made it a terror on back roads and a dominant autocross competitor for years."
+    },
+    {
+      "name": "Civic Wagon RT4WD",
+      "description": "A genuinely unusual variant — the fourth-gen Civic Wagon was available with a real-time 4-wheel-drive system, making it one of the earliest all-wheel-drive compact wagons ever sold. A quirky but capable niche vehicle that has developed a small but dedicated collector following."
+    }
+  ],
+
+  "colors": [
+    { "name": "Carnival Red",    "hex": "#b01a1a" },
+    { "name": "Frost White",     "hex": "#e8e6e0" },
+    { "name": "Bermuda Blue",    "hex": "#1a4a7a" },
+    { "name": "Sherwood Green",  "hex": "#2a5a3a" },
+    { "name": "Black",           "hex": "#1c1c1e" },
+    { "name": "Sterling Silver", "hex": "#a8aeb4" },
+    { "name": "Cashmere Beige",  "hex": "#c8b890" },
+    { "name": "Tahitian Blue",   "hex": "#2a4a6a" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",   "value": "4th Gen (EF)",    "highlight": false },
+    { "label": "Make",         "value": "Honda",            "highlight": false },
+    { "label": "Model",        "value": "Civic",            "highlight": false },
+    { "label": "Years",        "value": "1988–1991",        "highlight": false },
+    { "label": "Horsepower",   "value": "92–108 hp",        "highlight": true  },
+    { "label": "Torque",       "value": "89–100 lb-ft",     "highlight": true  },
+    { "label": "Engine",       "value": "1.5L / 1.6L I4",  "highlight": false },
+    { "label": "Transmission", "value": "5-Speed Manual",   "highlight": false },
+    { "label": "Drive",        "value": "FWD",              "highlight": false },
+    { "label": "0–60 mph",     "value": "8.1 sec (Si)",     "highlight": true  },
+    { "label": "Base Price",   "value": "$6,895",           "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Honda",   "model": "Civic (All Gens)", "id": "civic"      },
+    { "make": "Honda",   "model": "Civic 3rd Gen",    "id": "civic-gen3" },
+    { "make": "Honda",   "model": "Civic 5th Gen",    "id": "civic-gen5" },
+    { "make": "Toyota",  "model": "Corolla (E90)",    "id": "corolla"    }
+  ]
+}

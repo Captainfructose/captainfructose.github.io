@@ -14,6 +14,22 @@
   "base_price": "$39,990",
   "units_produced": "N/A",
 
+  "parentId": "civic",
+
+  "generations": [
+    { "id": "civic-gen1",  "label": "1st Gen",  "years": "1972–1979" },
+    { "id": "civic-gen2",  "label": "2nd Gen",  "years": "1979–1983" },
+    { "id": "civic-gen3",  "label": "3rd Gen",  "years": "1983–1987" },
+    { "id": "civic-gen4",  "label": "4th Gen",  "years": "1988–1991" },
+    { "id": "civic-gen5",  "label": "5th Gen",  "years": "1992–1995" },
+    { "id": "civic-gen6",  "label": "6th Gen",  "years": "1996–2000" },
+    { "id": "civic-gen7",  "label": "7th Gen",  "years": "2001–2005" },
+    { "id": "civic-gen8",  "label": "8th Gen",  "years": "2006–2011" },
+    { "id": "civic-gen9",  "label": "9th Gen",  "years": "2012–2015" },
+    { "id": "civic-gen10", "label": "10th Gen", "years": "2016–2021" },
+    { "id": "civictyper",  "label": "Type R",   "years": "2017–Pres." }
+  ],
+
   "images": {
     "thumb":   "Images/civictyper/thumb.jpg",
     "hero":    "Images/civictyper/hero.jpg",

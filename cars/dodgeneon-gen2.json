@@ -1,0 +1,186 @@
+{
+  "id": "dodgeneon-gen2",
+  "make": "Dodge",
+  "model": "Neon",
+  "abbr": "GEN2",
+  "years": "2000–2002",
+  "era": "2000s",
+  "category": "sport",
+  "drivetrain": "FWD",
+  "engine": "2.0L I4",
+  "hp": 150,
+  "torque": 135,
+  "zero_to_sixty": "7.6",
+  "base_price": "$13,495",
+  "units_produced": "N/A",
+
+  "parentId": "dodgeneon",
+
+  "generations": [
+    { "id": "dodgeneon-gen1", "label": "1st Gen", "years": "1994–1999" },
+    { "id": "dodgeneon-gen2", "label": "2nd Gen", "years": "2000–2002" },
+    { "id": "srt4",           "label": "SRT-4",   "years": "2003–2005", "link": "car.html?id=srt4" }
+  ],
+
+  "images": {
+    "thumb":   "Images/dodgeneon/gen2/thumb.jpg",
+    "hero":    "Images/dodgeneon/gen2/hero.jpg",
+    "gallery": [
+      "Images/dodgeneon/gen2/gallery1.jpg",
+      "Images/dodgeneon/gen2/gallery2.jpg",
+      "Images/dodgeneon/gen2/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Dodge · Sport Compact · 2000–2002",
+    "title": "NEON\n2ND GEN",
+    "subtitle": "PL Platform Revised · 2000–2002",
+    "image_text": "GEN2",
+    "badges": [
+      { "label": "150 HP",         "highlight": true  },
+      { "label": "135 lb-ft",      "highlight": true  },
+      { "label": "2.0L DOHC I4",   "highlight": false },
+      { "label": "5-Speed Manual", "highlight": false },
+      { "label": "FWD",            "highlight": false },
+      { "label": "SRT-4 Preview",  "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",    "href": "index.html"             },
+    { "label": "Browse",  "href": "browse.html"            },
+    { "label": "Dodge",   "href": "browse.html?make=dodge" },
+    { "label": "Neon",    "href": "car.html?id=dodgeneon"  },
+    { "label": "2nd Gen", "href": null }
+  ],
+
+  "history": [
+    "The second generation <strong>Dodge Neon</strong> arrived for the 2000 model year as a thorough revision of the original PL platform. While it retained the same basic architecture as the first generation, Chrysler's engineers addressed nearly every criticism leveled at its predecessor — refining the interior quality, improving NVH characteristics, and giving the car a more mature, grown-up personality without sacrificing the fun-to-drive character that made the original Neon a hit.",
+    "The most significant improvements came inside the cabin. The second-gen Neon featured a completely redesigned interior with higher quality materials, a more ergonomic dashboard layout, and significantly better sound insulation. Road and wind noise — persistent complaints about the first generation — were dramatically reduced, making the car far more livable as a daily driver.",
+    "Under the hood the <strong>2.0-liter DOHC engine</strong> received minor refinements bringing torque output up slightly to 135 lb-ft. The Sport trim continued to offer this higher-output engine while the base model retained the SOHC unit. The 5-speed manual transmission was also revised with improved shift quality, addressing another first-gen criticism.",
+    "The second generation Neon served as the direct foundation for what would become the <strong>SRT-4</strong>. Chrysler's SRT division selected the revised PL platform for its performance project, recognizing that the second-gen Neon's stiffer structure and refined dynamics made it a better candidate for forced induction than its predecessor. Production of the standard second-gen Neon wrapped in 2002, with the SRT-4 carrying the Neon nameplate through 2005."
+  ],
+
+  "timeline": [
+    { "dot": "GEN1", "label": "1st Gen",     "year": "1994–1999", "active": false },
+    { "dot": "2000", "label": "Gen 2 Launch","year": "2000",      "active": true  },
+    { "dot": "R/T",  "label": "R/T Returns", "year": "2001",      "active": false },
+    { "dot": "2002", "label": "Final Year",  "year": "2002",      "active": false },
+    { "dot": "SRT",  "label": "SRT-4 Era",  "year": "2003",      "active": false }
+  ],
+
+  "did_you_know": "The second-generation Neon's body structure was <strong>significantly stiffer than the first generation</strong> — a key reason the SRT division chose it as the basis for the SRT-4. The improved torsional rigidity allowed the turbocharged drivetrain to put power down more effectively and gave the SRT-4 its surprisingly capable handling despite its budget origins.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine (base)",  "value": "2.0L SOHC I4",                         "highlight": false },
+        { "label": "Engine (Sport)", "value": "2.0L DOHC I4",                         "highlight": true  },
+        { "label": "Displacement",   "value": "1,996 cc",                              "highlight": false },
+        { "label": "Horsepower",     "value": "132 hp (SOHC) / 150 hp (DOHC)",       "highlight": true  },
+        { "label": "Torque",         "value": "130 lb-ft (SOHC) / 135 lb-ft (DOHC)", "highlight": true  },
+        { "label": "Compression",    "value": "9.8:1 (SOHC) / 9.6:1 (DOHC)",       "highlight": false },
+        { "label": "Transmission",   "value": "5-speed manual or 3-speed auto",       "highlight": false },
+        { "label": "Drivetrain",     "value": "Front-Wheel Drive (FWD)",              "highlight": false },
+        { "label": "Differential",   "value": "Open",                                  "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "7.6 sec (DOHC) / 8.5 sec (SOHC)", "highlight": true  },
+        { "label": "Quarter Mile",        "value": "15.7 sec @ 89 mph (DOHC)",         "highlight": false },
+        { "label": "Top Speed",           "value": "124 mph (DOHC)",                   "highlight": false },
+        { "label": "Lateral G",           "value": "0.81g",                            "highlight": false },
+        { "label": "Braking (60–0)",      "value": "124 ft",                           "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "28 mpg",                           "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "37 mpg",                           "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "31 mpg",                           "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "2,467 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "105.0 in",  "highlight": false },
+        { "label": "Length",      "value": "174.4 in",  "highlight": false },
+        { "label": "Width",       "value": "67.4 in",   "highlight": false },
+        { "label": "Height",      "value": "55.9 in",   "highlight": false },
+        { "label": "Front Track", "value": "57.8 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "57.3 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Neon Base",
+      "years": "2000–2002",
+      "description": "The entry-level second-gen Neon with the SOHC engine, improved interior quality over the first generation, and standard dual airbags and ABS."
+    },
+    {
+      "name": "Neon ES",
+      "years": "2000–2002",
+      "description": "A new mid-tier trim replacing the Highline, adding cruise control, upgraded cloth seating, and additional convenience features at a modest price premium."
+    },
+    {
+      "name": "Neon Sport",
+      "years": "2000–2002",
+      "description": "The DOHC-equipped performance trim with sport suspension tuning, 15-inch alloy wheels, and the revised close-ratio 5-speed manual transmission."
+    },
+    {
+      "name": "Neon R/T",
+      "years": "2001–2002",
+      "description": "The top-of-the-line performance trim returning for 2001 with the DOHC engine, sport-tuned Koni shocks, unique badging, and the closest preview of what the SRT-4 would become."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Neon R/T",
+      "description": "The R/T made a welcome return for 2001 after a brief absence. With Koni shocks, the DOHC engine, and a sport-tuned suspension, it was the ultimate expression of the second-gen Neon and a clear preview of the SRT-4's potential."
+    },
+    {
+      "name": "Neon ACR",
+      "description": "The American Club Racer package continued into the second generation, offering Koni adjustable shocks, a strut tower brace, and stripped interior for maximum track performance on a budget."
+    },
+    {
+      "name": "Chrysler PT Cruiser (Related)",
+      "description": "While not a Neon variant, the PT Cruiser used a modified version of the same PL platform. Its development alongside the second-gen Neon helped Chrysler amortize engineering costs across both models."
+    }
+  ],
+
+  "colors": [
+    { "name": "Flame Red",      "hex": "#c0392b" },
+    { "name": "Stone White",    "hex": "#e8e4dc" },
+    { "name": "Black",          "hex": "#1c1c1e" },
+    { "name": "Graphite",       "hex": "#5a6e7a" },
+    { "name": "Silver",         "hex": "#b0b8c0" },
+    { "name": "Electric Blue",  "hex": "#1a4a8a" },
+    { "name": "Solar Yellow",   "hex": "#d4c84a" },
+    { "name": "Inferno Red",    "hex": "#8a1a1a" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",    "value": "2nd Gen (PL Rev.)", "highlight": false },
+    { "label": "Make",          "value": "Dodge",             "highlight": false },
+    { "label": "Model",         "value": "Neon",              "highlight": false },
+    { "label": "Years",         "value": "2000–2002",         "highlight": false },
+    { "label": "Horsepower",    "value": "132–150 hp",        "highlight": true  },
+    { "label": "Torque",        "value": "130–135 lb-ft",     "highlight": true  },
+    { "label": "Engine",        "value": "2.0L I4",           "highlight": false },
+    { "label": "Transmission",  "value": "5-Speed Manual",    "highlight": false },
+    { "label": "Drive",         "value": "FWD",               "highlight": false },
+    { "label": "0–60 mph",      "value": "7.6 sec",           "highlight": true  },
+    { "label": "Base Price",    "value": "$13,495",           "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Dodge",     "model": "Neon (All Gens)", "id": "dodgeneon"      },
+    { "make": "Dodge",     "model": "Neon SRT-4",      "id": "srt4"           },
+    { "make": "Honda",     "model": "Civic (EM2)",     "id": "civictyper"     },
+    { "make": "Ford",      "model": "Focus ZX3",       "id": "focus"          }
+  ]
+}

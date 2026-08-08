@@ -14,6 +14,13 @@
   "base_price": "$34,395",
   "units_produced": "N/A",
 
+  "generations": [
+    { "id": "wrxsti-gc8", "label": "GC8", "years": "1994–2001" },
+    { "id": "wrxsti-gd",  "label": "GD",  "years": "2002–2007" },
+    { "id": "wrxsti-gr",  "label": "GR",  "years": "2008–2014" },
+    { "id": "wrxsti-va",  "label": "VA",  "years": "2015–2021" }
+  ],
+
   "images": {
     "thumb":   "Images/wrxsti/thumb.jpg",
     "hero":    "Images/wrxsti/hero.jpg",

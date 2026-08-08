@@ -1,0 +1,180 @@
+{
+  "id": "dodgeneon",
+  "make": "Dodge",
+  "model": "Neon",
+  "abbr": "NEON",
+  "years": "1994–2005",
+  "era": "1990s",
+  "category": "sport",
+  "drivetrain": "FWD",
+  "engine": "2.0L I4",
+  "hp": 132,
+  "torque": 130,
+  "zero_to_sixty": "8.2",
+  "base_price": "$12,995",
+  "units_produced": "N/A",
+
+  "generations": [
+    { "id": "dodgeneon-gen1", "label": "1st Gen",  "years": "1994–1999" },
+    { "id": "dodgeneon-gen2", "label": "2nd Gen",  "years": "2000–2002" },
+    { "id": "srt4",           "label": "SRT-4",    "years": "2003–2005", "link": "car.html?id=srt4" }
+  ],
+
+  "images": {
+    "thumb":   "Images/dodgeneon/thumb.jpg",
+    "hero":    "Images/dodgeneon/hero.jpg",
+    "gallery": [
+      "Images/dodgeneon/gallery1.jpg",
+      "Images/dodgeneon/gallery2.jpg",
+      "Images/dodgeneon/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Dodge · Sport Compact · 1994–2005",
+    "title": "DODGE\nNEON",
+    "subtitle": "1994–2005 Production",
+    "image_text": "NEON",
+    "badges": [
+      { "label": "132 HP",       "highlight": true  },
+      { "label": "130 lb-ft",    "highlight": true  },
+      { "label": "2.0L I4",      "highlight": false },
+      { "label": "5-Speed Manual","highlight": false },
+      { "label": "FWD",          "highlight": false },
+      { "label": "SRT-4 Option", "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",   "href": "index.html"             },
+    { "label": "Browse", "href": "browse.html"            },
+    { "label": "Dodge",  "href": "browse.html?make=dodge" },
+    { "label": "Neon",   "href": null }
+  ],
+
+  "history": [
+    "The <strong>Dodge Neon</strong> was Chrysler's answer to the growing demand for affordable, fuel-efficient compact cars in the early 1990s. Introduced for the 1994 model year, the Neon was developed under the PL platform and shared with its Plymouth twin. With a peppy 2.0-liter engine, front-wheel drive, and a starting price under $13,000, it became one of the best-selling compact cars of its era.",
+    "The first generation Neon earned a reputation for being fun to drive despite its economy car roots. The available <strong>DOHC 2.0-liter engine</strong> producing 150 horsepower made it a surprisingly capable performer, particularly in the Sport and R/T trims. Chrysler's \"Hi\" advertising campaign made it one of the most recognizable cars of the mid-90s.",
+    "A significant refresh arrived for the 2000 model year with the second generation, bringing a more refined interior, improved NVH characteristics, and updated styling. The R/T trim continued to offer the sporty DOHC engine, keeping enthusiast interest alive.",
+    "The Neon's legacy was cemented in 2003 when Chrysler's SRT division transformed the humble compact into the <strong>Neon SRT-4</strong> — a turbocharged performance machine producing 230 horsepower that shocked the automotive world. Production of all Neon variants concluded in 2005 when Chrysler retired the platform."
+  ],
+
+  "timeline": [
+    { "dot": "PL",   "label": "PL Platform",  "year": "1993",      "active": false },
+    { "dot": "GEN1", "label": "1st Gen",      "year": "1994–1999", "active": false },
+    { "dot": "GEN2", "label": "2nd Gen",      "year": "2000–2002", "active": false },
+    { "dot": "SRT",  "label": "SRT-4 Era",   "year": "2003–2005", "active": false },
+    { "dot": "END",  "label": "Production End","year": "2005",     "active": false }
+  ],
+
+  "did_you_know": "The original Dodge Neon's \"Hi\" advertising campaign — featuring the car's headlights shaped to look like eyes waving hello — became one of the most memorable car ad campaigns of the 1990s. The cheerful personality carried over into the car itself, which Chrysler positioned as <strong>\"the car that smiles back.\"</strong>",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine",        "value": "2.0L SOHC I4 (base) / 2.0L DOHC I4 (Sport)", "highlight": true  },
+        { "label": "Displacement",  "value": "1,996 cc",                                       "highlight": false },
+        { "label": "Horsepower",    "value": "132 hp (SOHC) / 150 hp (DOHC)",               "highlight": true  },
+        { "label": "Torque",        "value": "130 lb-ft (SOHC) / 133 lb-ft (DOHC)",         "highlight": true  },
+        { "label": "Compression",   "value": "9.8:1 (SOHC) / 9.6:1 (DOHC)",               "highlight": false },
+        { "label": "Transmission",  "value": "5-speed manual or 3-speed auto",               "highlight": false },
+        { "label": "Drivetrain",    "value": "Front-Wheel Drive (FWD)",                      "highlight": false },
+        { "label": "Differential",  "value": "Open",                                          "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "8.2 sec (SOHC) / 7.8 sec (DOHC)", "highlight": true  },
+        { "label": "Quarter Mile",        "value": "16.1 sec @ 85 mph",                "highlight": false },
+        { "label": "Top Speed",           "value": "118 mph",                          "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "28 mpg",                           "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "36 mpg",                           "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "31 mpg",                           "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "2,422 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "105.0 in",  "highlight": false },
+        { "label": "Length",      "value": "171.8 in",  "highlight": false },
+        { "label": "Width",       "value": "67.4 in",   "highlight": false },
+        { "label": "Height",      "value": "55.9 in",   "highlight": false },
+        { "label": "Front Track", "value": "57.8 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "57.3 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Neon Base",
+      "years": "1994–2005",
+      "description": "The entry-level Neon with the SOHC 2.0L engine, standard equipment, and a no-frills approach that kept the price accessible."
+    },
+    {
+      "name": "Neon Sport",
+      "years": "1994–2005",
+      "description": "Added the DOHC 2.0L engine, sport suspension, upgraded interior trim, and 15-inch alloy wheels — the sweet spot of the standard Neon lineup."
+    },
+    {
+      "name": "Neon R/T",
+      "years": "1998–2002",
+      "description": "The performance-focused R/T brought the DOHC engine, a close-ratio 5-speed manual, stiffer suspension tuning, and exclusive exterior badging."
+    },
+    {
+      "name": "Neon SRT-4",
+      "years": "2003–2005",
+      "description": "The turbocharged performance variant built by Chrysler's SRT division. 230 horsepower from a 2.4L turbocharged engine transformed the humble Neon into a sport compact legend."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Neon SRT-4",
+      "description": "The crown jewel of the Neon lineup. The SRT-4 used a turbocharged 2.4L engine producing 230 hp and became one of the most celebrated sport compacts of the 2000s. See the dedicated SRT-4 entry for full details."
+    },
+    {
+      "name": "Neon ACR",
+      "description": "The American Club Racer package was available on the standard Neon R/T, adding Koni adjustable shocks, a strut tower brace, and deleted comfort equipment for weight savings — a track-day special before the SRT-4 arrived."
+    },
+    {
+      "name": "Plymouth Neon",
+      "description": "An identical twin to the Dodge Neon sold under the Plymouth brand through 2001 when Chrysler discontinued the Plymouth nameplate. Mechanically identical with minor badge differences."
+    }
+  ],
+
+  "colors": [
+    { "name": "Flame Red",     "hex": "#c0392b" },
+    { "name": "Stone White",   "hex": "#e8e4dc" },
+    { "name": "Black",         "hex": "#1c1c1e" },
+    { "name": "Aqua",          "hex": "#1a7a8a" },
+    { "name": "Lemon Yellow",  "hex": "#d4c84a" },
+    { "name": "Graphite",      "hex": "#5a6e7a" },
+    { "name": "Silver",        "hex": "#b0b8c0" },
+    { "name": "Candy Apple",   "hex": "#a02020" }
+  ],
+
+  "quick_ref": [
+    { "label": "Make",           "value": "Dodge",          "highlight": false },
+    { "label": "Model",          "value": "Neon",           "highlight": false },
+    { "label": "Years",          "value": "1994–2005",      "highlight": false },
+    { "label": "Horsepower",     "value": "132–150 hp",     "highlight": true  },
+    { "label": "Torque",         "value": "130–133 lb-ft",  "highlight": true  },
+    { "label": "Engine",         "value": "2.0L I4",        "highlight": false },
+    { "label": "Transmission",   "value": "5-Speed Manual", "highlight": false },
+    { "label": "Drive",          "value": "FWD",            "highlight": false },
+    { "label": "0–60 mph",       "value": "7.8–8.2 sec",    "highlight": true  },
+    { "label": "Base Price",     "value": "$12,995",        "highlight": false },
+    { "label": "Units Produced", "value": "N/A",            "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Dodge",      "model": "Neon SRT-4",   "id": "srt4"       },
+    { "make": "Honda",      "model": "Civic",        "id": "civictyper" },
+    { "make": "Ford",       "model": "Focus",        "id": "focus"      },
+    { "make": "Chevrolet",  "model": "Cavalier",     "id": "cavalier"   }
+  ]
+}

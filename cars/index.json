@@ -1,5 +1,83 @@
 [
   {
+    "id":         "civic",
+    "make":       "Honda",
+    "model":      "Civic",
+    "abbr":       "CIVIC",
+    "years":      "1972–Present",
+    "hp":         50,
+    "engine":     "Various",
+    "drivetrain": "FWD",
+    "era":        "1970s",
+    "category":   ["sport", "classic"],
+    "thumb":      "Images/civic/thumb.jpg"
+  },
+  {
+    "id":         "civic-gen1",
+    "make":       "Honda",
+    "model":      "Civic 1st Gen",
+    "abbr":       "GEN1",
+    "years":      "1972–1979",
+    "hp":         50,
+    "engine":     "1.2L I4",
+    "drivetrain": "FWD",
+    "era":        "1970s",
+    "category":   ["sport", "classic"],
+    "thumb":      "Images/civic/gen1/thumb.jpg"
+  },
+  {
+    "id":         "civic-gen2",
+    "make":       "Honda",
+    "model":      "Civic 2nd Gen",
+    "abbr":       "GEN2",
+    "years":      "1979–1983",
+    "hp":         55,
+    "engine":     "1.3L I4",
+    "drivetrain": "FWD",
+    "era":        "1970s",
+    "category":   ["sport", "classic"],
+    "thumb":      "Images/civic/gen2/thumb.jpg"
+  },
+  {
+    "id":         "civic-gen3",
+    "make":       "Honda",
+    "model":      "Civic 3rd Gen",
+    "abbr":       "GEN3",
+    "years":      "1983–1987",
+    "hp":         76,
+    "engine":     "1.5L I4",
+    "drivetrain": "FWD",
+    "era":        "1980s",
+    "category":   ["sport", "classic"],
+    "thumb":      "Images/civic/gen3/thumb.jpg"
+  },
+  {
+    "id":         "civic-gen4",
+    "make":       "Honda",
+    "model":      "Civic 4th Gen",
+    "abbr":       "GEN4",
+    "years":      "1988–1991",
+    "hp":         92,
+    "engine":     "1.5L I4",
+    "drivetrain": "FWD",
+    "era":        "1980s",
+    "category":   ["sport", "classic"],
+    "thumb":      "Images/civic/gen4/thumb.jpg"
+  },
+  {
+    "id":         "dodgeneon",
+    "make":       "Dodge",
+    "model":      "Neon",
+    "abbr":       "NEON",
+    "years":      "1994–2005",
+    "hp":         132,
+    "engine":     "2.0L I4",
+    "drivetrain": "FWD",
+    "era":        "1990s",
+    "category":   ["sport"],
+    "thumb":      "Images/dodgeneon/thumb.jpg"
+  },
+  {
     "id":         "srt4",
     "make":       "Dodge",
     "model":      "Neon SRT-4",
@@ -9,7 +87,7 @@
     "engine":     "2.4L Turbo",
     "drivetrain": "FWD",
     "era":        "2000s",
-    "category":   "sport",
+    "category":   ["sport"],
     "thumb":      "Images/srt4/thumb.jpg"
   },
   {
@@ -22,7 +100,7 @@
     "engine":     "2.0L Turbo",
     "drivetrain": "FWD",
     "era":        "2010s",
-    "category":   "sport",
+    "category":   ["sport"],
     "thumb":      "Images/civictyper/thumb.jpg"
   },
   {
@@ -35,7 +113,7 @@
     "engine":     "2.5L Turbo Boxer",
     "drivetrain": "AWD",
     "era":        "2000s",
-    "category":   "jdm",
+    "category":   ["jdm", "sport"],
     "thumb":      "Images/wrxsti/thumb.jpg"
   },
   {
@@ -48,7 +126,7 @@
     "engine":     "5.2L SC V8",
     "drivetrain": "RWD",
     "era":        "2020s",
-    "category":   "muscle"
+    "category":   ["muscle", "supercar"]
   },
   {
     "id":         "evo8",
@@ -60,7 +138,7 @@
     "engine":     "2.0L Turbo",
     "drivetrain": "AWD",
     "era":        "2000s",
-    "category":   "jdm"
+    "category":   ["jdm", "sport"]
   },
   {
     "id":         "gtr",
@@ -72,7 +150,7 @@
     "engine":     "2.6L Twin-Turbo",
     "drivetrain": "AWD",
     "era":        "1990s",
-    "category":   "jdm"
+    "category":   ["jdm", "supercar"]
   },
   {
     "id":         "camaroz28",
@@ -84,7 +162,7 @@
     "engine":     "302ci V8",
     "drivetrain": "RWD",
     "era":        "1960s",
-    "category":   "muscle"
+    "category":   ["muscle", "classic"]
   },
   {
     "id":         "supramkiv",
@@ -96,7 +174,7 @@
     "engine":     "3.0L Twin-Turbo",
     "drivetrain": "RWD",
     "era":        "1990s",
-    "category":   "jdm"
+    "category":   ["jdm", "supercar"]
   },
   {
     "id":         "m3e46",
@@ -108,7 +186,7 @@
     "engine":     "3.2L I6",
     "drivetrain": "RWD",
     "era":        "2000s",
-    "category":   "euro"
+    "category":   ["euro", "sport"]
   },
   {
     "id":         "mustanggt",
@@ -120,7 +198,7 @@
     "engine":     "5.0L V8",
     "drivetrain": "RWD",
     "era":        "2010s",
-    "category":   "muscle",
+    "category":   ["muscle"],
     "thumb":      "Images/mustanggt/thumb.jpg"
   },
   {
@@ -133,7 +211,7 @@
     "engine":     "8.3L V10",
     "drivetrain": "RWD",
     "era":        "2000s",
-    "category":   "supercar"
+    "category":   ["supercar", "muscle"]
   },
   {
     "id":         "nsx",
@@ -145,6 +223,6 @@
     "engine":     "3.0L VTEC V6",
     "drivetrain": "RWD",
     "era":        "1990s",
-    "category":   "supercar"
+    "category":   ["supercar", "jdm"]
   }
 ]

@@ -184,10 +184,11 @@
   let sortBy  = 'default';
 
   // ─── READ URL PARAMS (from hero search on index.html) ───
-  // e.g. browse.html?q=supra  or  browse.html?make=dodge
+  // e.g. browse.html?q=supra  or  browse.html?make=dodge  or  browse.html?cat=muscle
   const params = new URLSearchParams(location.search);
   if (params.has('q'))    searchQ = params.get('q');
   if (params.has('make')) filters.make = params.get('make');
+  if (params.has('cat'))  filters.cat  = params.get('cat');
 
   // ─── HAMBURGER MENU ─────────────────────────────
   document.getElementById('nav-hamburger').addEventListener('click', () => {
@@ -229,6 +230,13 @@
         });
       }
 
+      // Activate the correct category filter pill if ?cat= was passed
+      if (filters.cat !== 'all') {
+        document.querySelectorAll('.filter-pill[data-filter="cat"]').forEach(p => {
+          p.classList.toggle('active', p.dataset.value === filters.cat);
+        });
+      }
+
       renderCards();
       document.getElementById('page-transition').classList.add('loaded');
       attachTransitionLinks();
@@ -264,9 +272,11 @@
       const matchEra = filters.era === 'all' ||
         car.era === filters.era;
 
-      // Category filter
+      // Category filter — category is now an array so use includes()
       const matchCat = filters.cat === 'all' ||
-        car.category === filters.cat;
+        (Array.isArray(car.category)
+          ? car.category.includes(filters.cat)
+          : car.category === filters.cat); // fallback for any old single-string entries
 
       return matchSearch && matchMake && matchEra && matchCat;
     });

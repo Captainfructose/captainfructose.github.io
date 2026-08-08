@@ -1,0 +1,192 @@
+{
+  "id": "civic-gen2",
+  "make": "Honda",
+  "model": "Civic",
+  "abbr": "GEN2",
+  "years": "1979–1983",
+  "era": "1970s",
+  "category": ["sport", "classic"],
+  "drivetrain": "FWD",
+  "engine": "1.3L I4",
+  "hp": 55,
+  "torque": 65,
+  "zero_to_sixty": "13.8",
+  "base_price": "$3,995",
+  "units_produced": "N/A",
+
+  "parentId": "civic",
+
+  "generations": [
+    { "id": "civic-gen1",  "label": "1st Gen",  "years": "1972–1979" },
+    { "id": "civic-gen2",  "label": "2nd Gen",  "years": "1979–1983" },
+    { "id": "civic-gen3",  "label": "3rd Gen",  "years": "1983–1987" },
+    { "id": "civic-gen4",  "label": "4th Gen",  "years": "1988–1991" },
+    { "id": "civic-gen5",  "label": "5th Gen",  "years": "1992–1995" },
+    { "id": "civic-gen6",  "label": "6th Gen",  "years": "1996–2000" },
+    { "id": "civic-gen7",  "label": "7th Gen",  "years": "2001–2005" },
+    { "id": "civic-gen8",  "label": "8th Gen",  "years": "2006–2011" },
+    { "id": "civic-gen9",  "label": "9th Gen",  "years": "2012–2015" },
+    { "id": "civic-gen10", "label": "10th Gen", "years": "2016–2021" },
+    { "id": "civictyper",  "label": "Type R",   "years": "2017–Pres.", "link": "car.html?id=civictyper" }
+  ],
+
+  "images": {
+    "thumb":   "Images/civic/gen2/thumb.jpg",
+    "hero":    "Images/civic/gen2/hero.jpg",
+    "gallery": [
+      "Images/civic/gen2/gallery1.jpg",
+      "Images/civic/gen2/gallery2.jpg",
+      "Images/civic/gen2/gallery3.jpg"
+    ]
+  },
+
+  "hero": {
+    "eyebrow": "Honda · Compact · 1979–1983",
+    "title": "CIVIC\n2ND GEN",
+    "subtitle": "SY/SM Platform · 1979–1983",
+    "image_text": "GEN2",
+    "badges": [
+      { "label": "55 HP",          "highlight": true  },
+      { "label": "65 lb-ft",       "highlight": true  },
+      { "label": "1.3L I4",        "highlight": false },
+      { "label": "5-Speed Manual", "highlight": false },
+      { "label": "FWD",            "highlight": false },
+      { "label": "CRX Preview",    "highlight": false }
+    ]
+  },
+
+  "breadcrumb": [
+    { "label": "Home",    "href": "index.html"             },
+    { "label": "Browse",  "href": "browse.html"            },
+    { "label": "Honda",   "href": "browse.html?make=honda" },
+    { "label": "Civic",   "href": "car.html?id=civic"      },
+    { "label": "2nd Gen", "href": null }
+  ],
+
+  "history": [
+    "The second generation <strong>Honda Civic</strong> arrived in 1979 as a significantly larger and more refined evolution of the original. Where the first generation had been a radical departure from convention, the second generation refined and expanded on that formula — growing in size to better suit American tastes while retaining the lightweight efficiency that made its predecessor a hit.",
+    "Honda made a decisive step upmarket with the second generation. The interior was considerably more refined than the spartan first-gen cabin, with improved materials, better ergonomics, and a dashboard layout that felt genuinely modern for the era. A new <strong>five-speed manual transmission</strong> was offered for the first time, giving enthusiast drivers a more engaging driving experience.",
+    "The engine lineup expanded to include a new <strong>1.3-liter and 1.5-liter CVCC four-cylinder</strong>, both carrying forward Honda's landmark clean-combustion technology. Power outputs remained modest by any measure, but the second-gen Civic's light weight — still well under 2,000 pounds — meant it felt lively and responsive despite the numbers on paper.",
+    "Perhaps most significantly, the second generation introduced the <strong>Honda Civic Wagon</strong> in a more developed form and previewed the direction Honda would take with the soon-to-arrive CRX. The hatchback body style remained the most popular choice and the one most closely associated with the Civic name during this era. Production concluded in 1983, making way for the landmark third generation."
+  ],
+
+  "timeline": [
+    { "dot": "GEN1", "label": "1st Gen End",  "year": "1979",      "active": false },
+    { "dot": "1979", "label": "Gen 2 Launch", "year": "1979",      "active": true  },
+    { "dot": "5SPD", "label": "5-Spd Intro",  "year": "1980",      "active": false },
+    { "dot": "WGN",  "label": "Wagon Added",  "year": "1982",      "active": false },
+    { "dot": "GEN3", "label": "Next Gen",     "year": "1983",      "active": false }
+  ],
+
+  "did_you_know": "The second-generation Civic was the first Honda sold in North America to offer a <strong>five-speed manual transmission</strong>, a feature that was still considered a premium option on economy cars at the time. Honda's decision to include it reflected their belief that a fun-to-drive car and an efficient car weren't mutually exclusive.",
+
+  "specs": [
+    {
+      "group": "Engine & Drivetrain",
+      "rows": [
+        { "label": "Engine (base)",  "value": "1.3L CVCC SOHC I4",                    "highlight": false },
+        { "label": "Engine (upper)", "value": "1.5L CVCC SOHC I4",                    "highlight": true  },
+        { "label": "Displacement",   "value": "1,335 cc (base) / 1,488 cc (upper)",   "highlight": false },
+        { "label": "Horsepower",     "value": "55 hp (1.3L) / 67 hp (1.5L)",          "highlight": true  },
+        { "label": "Torque",         "value": "65 lb-ft (1.3L) / 77 lb-ft (1.5L)",   "highlight": true  },
+        { "label": "Compression",    "value": "8.5:1",                                  "highlight": false },
+        { "label": "Transmission",   "value": "4-speed or 5-speed manual, 2-sp auto", "highlight": false },
+        { "label": "Drivetrain",     "value": "Front-Wheel Drive (FWD)",              "highlight": false },
+        { "label": "Differential",   "value": "Open",                                   "highlight": false }
+      ]
+    },
+    {
+      "group": "Performance",
+      "rows": [
+        { "label": "0–60 mph",            "value": "13.8 sec (1.3L) / 12.4 sec (1.5L)", "highlight": true  },
+        { "label": "Quarter Mile",        "value": "19.1 sec @ 71 mph",                  "highlight": false },
+        { "label": "Top Speed",           "value": "92 mph (1.5L)",                      "highlight": false },
+        { "label": "Fuel Economy (City)", "value": "35 mpg",                             "highlight": false },
+        { "label": "Fuel Economy (Hwy)",  "value": "43 mpg",                             "highlight": false },
+        { "label": "Fuel Economy (Comb)", "value": "38 mpg",                             "highlight": false }
+      ]
+    },
+    {
+      "group": "Dimensions & Weight",
+      "rows": [
+        { "label": "Curb Weight", "value": "1,742 lbs", "highlight": false },
+        { "label": "Wheelbase",   "value": "88.6 in",   "highlight": false },
+        { "label": "Length",      "value": "145.7 in",  "highlight": false },
+        { "label": "Width",       "value": "60.6 in",   "highlight": false },
+        { "label": "Height",      "value": "52.6 in",   "highlight": false },
+        { "label": "Front Track", "value": "52.4 in",   "highlight": false },
+        { "label": "Rear Track",  "value": "52.0 in",   "highlight": false }
+      ]
+    }
+  ],
+
+  "trims": [
+    {
+      "name": "Civic Base",
+      "years": "1979–1983",
+      "description": "The entry-level second-gen with the 1.3L CVCC engine, 4-speed manual, and a notably more refined interior than the first generation."
+    },
+    {
+      "name": "Civic GL",
+      "years": "1979–1983",
+      "description": "The mid-range trim adding the 1.5L engine, upgraded interior appointments, a rear defroster, and additional comfort features that broadened the Civic's appeal."
+    },
+    {
+      "name": "Civic 1500 Sport",
+      "years": "1980–1983",
+      "description": "The sporty variant featuring the 1.5L engine, the new 5-speed manual transmission, sport-tuned suspension, and a more aggressive appearance package."
+    },
+    {
+      "name": "Civic Wagon",
+      "years": "1982–1983",
+      "description": "A more fully developed station wagon variant than the first-gen offering, with a practical rear cargo area and the ability to seat five passengers comfortably."
+    }
+  ],
+
+  "variants": [
+    {
+      "name": "Civic Hatchback",
+      "description": "The defining body style of the second-gen Civic — a three-door hatchback that balanced practicality and style in a package weighing barely 1,700 pounds. Its light weight made it surprisingly fun to drive despite modest power."
+    },
+    {
+      "name": "Civic Sedan",
+      "description": "A four-door sedan variant offering greater passenger practicality. Less popular than the hatchback but an important part of the lineup that helped Honda sell to family buyers."
+    },
+    {
+      "name": "Civic Wagon",
+      "description": "Introduced for 1982, the Wagon was a genuinely practical vehicle that foreshadowed Honda's future prowess in the minivan and crossover segments. Mechanically identical to other second-gen variants."
+    }
+  ],
+
+  "colors": [
+    { "name": "Tahoe Red",      "hex": "#a02020" },
+    { "name": "Canyon Brown",   "hex": "#7a5030" },
+    { "name": "Glacier Blue",   "hex": "#2a5a8a" },
+    { "name": "Seafoam Green",  "hex": "#2a7a5a" },
+    { "name": "Ivory",          "hex": "#e8e4d4" },
+    { "name": "Black",          "hex": "#1c1c1e" },
+    { "name": "Silver",         "hex": "#a8aeb4" },
+    { "name": "Sunrise Yellow", "hex": "#c8b030" }
+  ],
+
+  "quick_ref": [
+    { "label": "Generation",   "value": "2nd Gen (SY/SM)",  "highlight": false },
+    { "label": "Make",         "value": "Honda",             "highlight": false },
+    { "label": "Model",        "value": "Civic",             "highlight": false },
+    { "label": "Years",        "value": "1979–1983",         "highlight": false },
+    { "label": "Horsepower",   "value": "55–67 hp",          "highlight": true  },
+    { "label": "Torque",       "value": "65–77 lb-ft",       "highlight": true  },
+    { "label": "Engine",       "value": "1.3L / 1.5L I4",   "highlight": false },
+    { "label": "Transmission", "value": "5-Speed Manual",    "highlight": false },
+    { "label": "Drive",        "value": "FWD",               "highlight": false },
+    { "label": "0–60 mph",     "value": "~12.4 sec",         "highlight": true  },
+    { "label": "Base Price",   "value": "$3,995",            "highlight": false }
+  ],
+
+  "related": [
+    { "make": "Honda",   "model": "Civic (All Gens)", "id": "civic"      },
+    { "make": "Honda",   "model": "Civic 1st Gen",    "id": "civic-gen1" },
+    { "make": "Honda",   "model": "Civic 3rd Gen",    "id": "civic-gen3" },
+    { "make": "Toyota",  "model": "Corolla (E70)",    "id": "corolla"    }
+  ]
+}
